@@ -1,0 +1,48 @@
+Kedara Sri Surya Manobhiram Manchimchetti 
+Kakinada, Andhra Pradesh 
++91-9963621272 mmanobhiram8@gmail.com linkedin.com/in/abhiram github.com/Abhi12305323 
+Training   
+Lovely Professional University – Center for Professional Enhancements        Jun 2024-Jul 2024 
+Fundamentals of Data Structures  
+• Gained hands-on experience with Data Structures using Java, including arrays, linked lists, stacks, trees, and graphs. 
+• Learned and implemented core DSA algorithms such as searching, sorting, and recursion in real academic projects. 
+• Developed a practical Java-based project applying data structures and algorithms to solve real-world problems. 
+• Improved problem-solving, analytical thinking, and coding efficiency through structured exercises and project work. 
+• Builta strong foundation to apply DSA knowledge in competitive programming and software development scenarios 
+Projects  
+Adidas US Sales Analysis: | Pandas, Matplotlib, Seaborn, Python Mar 2025 - May 2025 
+ Performed comprehensive EDA on Adidas US sales data using Pandas and Seaborn to visualize product-wise sales distribution, 
+enabling stakeholders to identify top-performing categories and supporting an 80% growth insight. 
+ Utilized bar charts for clear representation of product-wise total sales, improving data-driven decision making. 
+ Utilized Pandas for data cleaning and Seaborn/Matplotlib for EDA, generating product-wise sales insights. 
+ Conducted EDA on Adidas US sales dataset, produced clear product-level sales visualizations, and identified trends contributing to an 
+80% growth rate 
+ GitHub Link: https://github.com/Abhi12305323/python-project 
+ 
+Brick Breaker Game: | Python, Pygame Jan 2025 - Mar 2025 
+• Developed an interactive Brick game using Pygame, focusing on game mechanics like paddle control, ball physics, and brick collisions. 
+• Implemented multiple difficulty levels (Easy, Medium, Hard) with adjustable paddle and ball speeds to different player skill levels. 
+• Designed gradient background, collision detection, scoring, and level progression enhancing the user experience. 
+• Built features like game pause, restart, and dynamic difficulty adjustment ensuring smooth gameplay and success rate of 75%. 
+• GitHub Link: https://github.com/Abhi12305323/brick-baker 
+Certification  
+Fundamentals of Data Structures: Center for Professional Enhancement (LPU)    Jun 2025 
+C Language – Neo Colab May 2024 
+Python 101 for Data Science – Cognitive Class (IBM)    Apr 2024 
+Python Programming – iHUB DivyaSampark, IIT Roorkee      Mar 2024 
+ResponsiveWeb Design – freeCodeCamp                                                                                                                                    Oct 2023 
+ 
+Technical Skills  
+Languages: Java, Python, C, SQL 
+Frameworks: HTML, CSS, JavaScript, MySQL, Pandas, Matplotlib, Seaborn 
+Tools/Technologies: Version Control (Git, GitHub), Jupyter Notebook, Google Colab, Tableau 
+Foundations: Data Structures and Algorithms, Web Development, Data Analysis & Visualization DBMS, SQL 
+Skills: Data Structures and Algorithms, Operating Systems, Networking, Design Patterns, DBMS, SQL, Machine Learning. 
+Education  
+Lovely Professional University               2023 –2027 
+B. Tech in Computer Science and Engineering Jalandhar, Punjab 
+Aditya School 2022 – 2023 
+12th with Science – Percentage: 67% Kakinada, Andhra Pradesh 
+Sri Chaitanya International School 2020 – 2021 
+10th class – Percentage: 84% Kakinada, Andhra Pradesh 
+

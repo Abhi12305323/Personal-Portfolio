@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gattu Charan Teja | Portfolio</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700;800&family=Outfit:wght@400;600;800;900&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        bgDark: '#050505',
+                        borderMain: '#262626',
+                        textMain: '#f5f5f5',
+                        textMuted: '#888888'
+                    },
+                    fontFamily: {
+                        sans: ['Outfit', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        /* Stark B&W Base */
+        :root {
+            --mouse-x: 50vw;
+            --mouse-y: 50vh;
+        }
+        
+        body {
+            background-color: #050505;
+            color: #f5f5f5;
+            overflow-x: hidden;
+            cursor: none;
+            background-image: 
+                linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: #050505; }
+        ::-webkit-scrollbar-thumb { background: #444; }
+
+        /* =========================================
+           DYNAMIC MULTI-COLOR SPOTLIGHT REVEAL
+           ========================================= */
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .multi-color-spotlight {
+            position: fixed;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            pointer-events: none;
+            z-index: 40;
+            
+            background: linear-gradient(45deg, #ff007f, #7928ca, #00f2fe, #facc15, #ff007f);
+            background-size: 400% 400%;
+            animation: gradientShift 8s ease infinite;
+            
+            mix-blend-mode: color-dodge;
+            opacity: 0.8;
+            
+            mask-image: radial-gradient(circle 350px at var(--mouse-x) var(--mouse-y), black 0%, transparent 80%);
+            -webkit-mask-image: radial-gradient(circle 350px at var(--mouse-x) var(--mouse-y), black 0%, transparent 80%);
+            transition: mask-image 0.1s ease-out, -webkit-mask-image 0.1s ease-out;
+        }
+
+        /* Sharp Cursor Reticle */
+        .cursor-crosshair {
+            position: fixed;
+            top: 0; left: 0;
+            width: 24px; height: 24px;
+            pointer-events: none;
+            transform: translate(-50%, -50%);
+            z-index: 9999;
+            transition: transform 0.1s;
+        }
+        .cursor-crosshair::before, .cursor-crosshair::after {
+            content: ''; position: absolute; background: white;
+        }
+        .cursor-crosshair::before { top: 50%; left: 0; right: 0; height: 2px; transform: translateY(-50%); }
+        .cursor-crosshair::after { left: 50%; top: 0; bottom: 0; width: 2px; transform: translateX(-50%); }
+
+        @media (max-width: 768px), (pointer: coarse) {
+            body { cursor: auto; }
+            .multi-color-spotlight, .cursor-crosshair { display: none; }
+        }
+
+        /* Brutalist Structural Elements */
+        .sharp-border {
+            border: 1px solid var(--borderMain);
+            border-radius: 0;
+        }
+        .sharp-border-b { border-bottom: 1px solid var(--borderMain); }
+        .sharp-border-t { border-top: 1px solid var(--borderMain); }
+
+        /* Row Hover Effects */
+        .data-row {
+            transition: background-color 0.2s ease, padding-left 0.2s ease;
+        }
+        .data-row:hover {
+            background-color: rgba(255,255,255,0.02);
+            padding-left: 1rem;
+            border-left: 4px solid white;
+        }
+
+        /* Typing Effect */
+        .typing-cursor {
+            display: inline-block; width: 10px; height: 1em;
+            background-color: white; margin-left: 8px;
+            animation: blink 0.8s step-end infinite;
+        }
+        @keyframes blink { 50% { opacity: 0; } }
+
+        /* Floating Animation for Certificates */
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-8px); }
+            100% { transform: translateY(0px); }
+        }
+        .float-card {
+            animation: float 6s ease-in-out infinite;
+        }
+        .float-delay-1 { animation-delay: 1s; }
+        .float-delay-2 { animation-delay: 2s; }
+        .float-delay-3 { animation-delay: 3s; }
+        .float-delay-4 { animation-delay: 4s; }
+
+        /* Reveal Animations */
+        .reveal { opacity: 0; transform: translateY(20px); transition: all 0.6s ease-out; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+    </style>
+</head>
+<body class="antialiased">
+
+    <div class="multi-color-spotlight"></div>
+    <div class="cursor-crosshair" id="cursor"></div>
+
+    <nav class="fixed top-0 w-full z-50 bg-[#050505]/90 border-b border-borderMain backdrop-blur-sm">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-black tracking-widest uppercase">G.C.T.</a>
+            <div class="hidden md:flex space-x-8 text-sm font-mono font-bold text-textMuted uppercase tracking-widest">
+                <a href="#about" class="hover:text-white transition-colors">SYS.INFO</a>
+                <a href="#bio" class="hover:text-white transition-colors">BIO</a>
+                <a href="#projects" class="hover:text-white transition-colors">PROJECTS</a>
+                <a href="#education" class="hover:text-white transition-colors">DATA_LOG</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="max-w-7xl mx-auto px-6 pt-32 pb-24">
+        
+        <section id="about" class="min-h-[80vh] flex flex-col justify-center reveal">
+            <div class="grid md:grid-cols-12 gap-8 items-end">
+                <div class="md:col-span-9">
+                    <p class="font-mono text-textMuted mb-6 tracking-widest uppercase text-sm border-l-2 border-textMuted pl-4">Identification Matrix</p>
+                    <h1 class="text-6xl md:text-9xl font-black uppercase tracking-tighter leading-none mb-6">Charan<br>Teja.</h1>
+                    <h2 class="text-2xl md:text-4xl font-bold text-textMuted font-mono h-12 flex items-center mb-8">
+                        > <span id="typewriter" class="text-white ml-4"></span><span class="typing-cursor"></span>
+                    </h2>
+                </div>
+                <div class="md:col-span-3 pb-4">
+                    <p class="font-mono text-textMuted text-sm mb-6 leading-relaxed">
+                        Engineering intelligent machine learning pipelines and predictive models to extract high-value insights from complex datasets.
+                    </p>
+                    <div class="flex flex-col gap-4 font-mono text-sm uppercase font-bold tracking-widest">
+                        <a href="#projects" class="sharp-border py-4 px-6 text-center hover:bg-white hover:text-black transition-colors bg-[#0a0a0a]">Execute Output</a>
+                        <a href="Genralized_cv.pdf" download="Gattu_Charan_Teja_CV.pdf" class="sharp-border py-4 px-6 text-center hover:bg-white hover:text-black transition-colors bg-[#0a0a0a] flex items-center justify-center gap-2">
+                            <i class="fas fa-download"></i> Download CV
+                        </a>
+                        <div class="flex gap-4">
+                            <a href="https://github.com/Charanteja009" target="_blank" class="flex-1 sharp-border py-3 text-center hover:bg-white hover:text-black transition-colors bg-[#0a0a0a]"><i class="fab fa-github text-xl"></i></a>
+                            <a href="https://www.linkedin.com/in/chanranteja009" target="_blank" class="flex-1 sharp-border py-3 text-center hover:bg-white hover:text-black transition-colors bg-[#0a0a0a]"><i class="fab fa-linkedin-in text-xl"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="bio" class="py-24 reveal">
+            <h2 class="text-4xl font-black uppercase tracking-tighter mb-12 border-b-4 border-white pb-4 inline-block">Personal_Core</h2>
+            <div class="grid md:grid-cols-12 gap-12 items-center">
+                
+                <div class="md:col-span-5 sharp-border p-8 bg-[#0a0a0a] relative group min-h-[400px] flex flex-col justify-between overflow-hidden">
+                    <div class="absolute inset-0 opacity-20 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMSIgY3k9IjEiIHI9IjEiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4wNSkiLz48L3N2Zz4=')]"></div>
+                    
+                    <div class="relative z-10">
+                        <p class="font-mono text-xs uppercase tracking-widest bg-white text-black px-2 py-1 inline-block mb-6 font-bold">Status: Online</p>
+                        <i class="fas fa-fingerprint text-6xl text-textMuted mb-6 block opacity-50"></i>
+                    </div>
+                    
+                    <div class="relative z-10 border-t border-borderMain pt-4">
+                        <h3 class="text-2xl font-black uppercase mb-1">Gattu Charan Teja</h3>
+                        <p class="font-mono text-sm text-textMuted mb-2">Location // Dharmavaram, AP</p>
+                        <p class="font-mono text-xs text-textMuted uppercase tracking-widest">Sys_Node: 515671</p>
+                    </div>
+                </div>
+
+                <div class="md:col-span-7 flex flex-col justify-center space-y-6">
+                    <p class="text-textMain font-mono text-base leading-relaxed text-justify">
+                        I am a Data Scientist and Machine Learning Engineer currently pursuing my B.Tech in Computer Science at Lovely Professional University. My core expertise lies in architecting end-to-end ML pipelines, performing rigorous exploratory data analysis, and engineering predictive models that translate raw datasets into high-value strategic insights.
+                    </p>
+                    <p class="text-textMuted font-mono text-base leading-relaxed text-justify">
+                        My technical foundation spans Python, SQL, and advanced ML libraries like TensorFlow and Scikit-Learn. I have successfully applied this stack to execute robust data projects—ranging from optimizing healthcare outcomes through Stroke Prediction models to deploying Logistic Regression algorithms for telecom Customer Churn analysis. 
+                    </p>
+                    <p class="text-textMuted font-mono text-base leading-relaxed text-justify">
+                        Beyond data infrastructure, I bridge the gap between backend logic and the end-user. Armed with a full-stack web development toolkit (React JS, Node JS) and formal training in Design Thinking and UI/UX prototyping via Figma, I build holistic, data-driven applications that are as structurally sound as they are intuitively designed.
+                    </p>
+                    <div class="flex flex-wrap gap-4 mt-6">
+                        <span class="sharp-border px-4 py-2 font-mono text-xs uppercase bg-[#050505] text-textMuted hover:text-white hover:border-white transition-colors cursor-default">ML Pipelines</span>
+                        <span class="sharp-border px-4 py-2 font-mono text-xs uppercase bg-[#050505] text-textMuted hover:text-white hover:border-white transition-colors cursor-default">Predictive Analytics</span>
+                        <span class="sharp-border px-4 py-2 font-mono text-xs uppercase bg-[#050505] text-textMuted hover:text-white hover:border-white transition-colors cursor-default">Full-Stack Dev</span>
+                        <span class="sharp-border px-4 py-2 font-mono text-xs uppercase bg-[#050505] text-textMuted hover:text-white hover:border-white transition-colors cursor-default">UI/UX Design</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="py-24 reveal">
+            <h2 class="text-4xl font-black uppercase tracking-tighter mb-12 border-b-4 border-white pb-4 inline-block">Tech_Stack</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-0 sharp-border">
+                <div class="p-8 border-b lg:border-b-0 md:border-r border-borderMain">
+                    <i class="fas fa-terminal text-4xl mb-6 text-white"></i>
+                    <h3 class="text-xl font-black uppercase mb-4">Core Runtime</h3>
+                    <div class="flex flex-wrap gap-2 font-mono text-xs text-textMuted">
+                        <span class="sharp-border px-3 py-1 bg-[#0a0a0a]">Python</span>
+                        <span class="sharp-border px-3 py-1 bg-[#0a0a0a]">SQL/MySQL</span>
+                        <span class="sharp-border px-3 py-1 bg-[#0a0a0a]">Java</span>
+                        <span class="sharp-border px-3 py-1 bg-[#0a0a0a]">C</span>
+                    </div>
+                </div>
+                <div class="p-8 border-b lg:border-b-0 lg:border-r border-borderMain bg-[#0a0a0a]">
+                    <i class="fas fa-microchip text-4xl mb-6 text-white"></i>
+                    <h3 class="text-xl font-black uppercase mb-4">ML & Data</h3>
+                    <div class="flex flex-wrap gap-2 font-mono text-xs text-textMuted">
+                        <span class="sharp-border px-3 py-1 bg-[#050505]">TensorFlow</span>
+                        <span class="sharp-border px-3 py-1 bg-[#050505]">Scikit-Learn</span>
+                        <span class="sharp-border px-3 py-1 bg-[#050505]">Pandas</span>
+                        <span class="sharp-border px-3 py-1 bg-[#050505]">NumPy</span>
+                    </div>
+                </div>
+                <div class="p-8 border-b md:border-b-0 md:border-r border-borderMain">
+                    <i class="fas fa-cubes text-4xl mb-6 text-white"></i>
+                    <h3 class="text-xl font-black uppercase mb-4">Infrastructure</h3>
+                    <div class="flex flex-wrap gap-2 font-mono text-xs text-textMuted">
+                        <span class="sharp-border px-3 py-1 bg-[#0a0a0a]">Tableau</span>
+                        <span class="sharp-border px-3 py-1 bg-[#0a0a0a]">Power BI</span>
+                        <span class="sharp-border px-3 py-1 bg-[#0a0a0a]">Git</span>
+                        <span class="sharp-border px-3 py-1 bg-[#0a0a0a]">Jupyter</span>
+                    </div>
+                </div>
+                <div class="p-8 bg-[#0a0a0a]">
+                    <i class="fas fa-globe text-4xl mb-6 text-white"></i>
+                    <h3 class="text-xl font-black uppercase mb-4">Web Dev</h3>
+                    <div class="flex flex-wrap gap-2 font-mono text-xs text-textMuted">
+                        <span class="sharp-border px-3 py-1 bg-[#050505]">HTML</span>
+                        <span class="sharp-border px-3 py-1 bg-[#050505]">CSS</span>
+                        <span class="sharp-border px-3 py-1 bg-[#050505]">JavaScript</span>
+                        <span class="sharp-border px-3 py-1 bg-[#050505]">React JS</span>
+                        <span class="sharp-border px-3 py-1 bg-[#050505]">Node JS</span>
+                        <span class="sharp-border px-3 py-1 bg-[#050505]">Express JS</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="experience" class="py-24 reveal">
+            <h2 class="text-4xl font-black uppercase tracking-tighter mb-12 border-b-4 border-white pb-4 inline-block">Internship_Experience</h2>
+            
+            <div class="sharp-border-t">
+                
+                <a href="https://drive.google.com/file/d/1QtWrwr_IgCwcuaoeEVltO0dMKRS6S9h0/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="data-row flex flex-col md:flex-row sharp-border-b py-10 gap-8 block cursor-pointer group">
+                    <div class="md:w-1/4">
+                        <p class="font-mono text-textMuted text-xs tracking-widest uppercase mb-2 group-hover:text-white transition-colors">E-01 // Internship</p>
+                        <h3 class="text-3xl font-black uppercase mb-4 leading-none">Design<br>Thinking</h3>
+                        <p class="font-mono text-sm uppercase tracking-widest text-textMuted"><i class="fas fa-calendar-alt"></i> Jun 2025 - Jul 2025</p>
+                    </div>
+                    <div class="md:w-2/4">
+                        <h4 class="text-xl font-bold uppercase mb-2 group-hover:text-white transition-colors">
+                            Summer Training: Design Thinking & Figma 
+                            <i class="fas fa-external-link-alt text-sm ml-2 opacity-0 group-hover:opacity-100 transition-opacity"></i>
+                        </h4>
+                        <p class="text-textMuted font-mono text-sm leading-relaxed text-justify mb-4">
+                            Completed an intensive skill development course organized by the Centre for Professional Enhancement at Lovely Professional University. Gained hands-on experience in UI/UX principles, wireframing, and rapid prototyping using Figma.
+                        </p>
+                        <div class="inline-block sharp-border px-4 py-2 font-mono text-sm text-white bg-[#0a0a0a] group-hover:bg-black group-hover:border-white transition-colors">
+                            Grade Achieved // <span class="font-bold text-green-400">A</span>
+                        </div>
+                    </div>
+                    <div class="md:w-1/4 flex flex-col gap-2 font-mono text-xs uppercase text-right justify-start">
+                        <span class="bg-white text-black px-3 py-1 font-bold">Figma</span>
+                        <span class="sharp-border px-3 py-1 group-hover:border-white transition-colors">UI/UX Design</span>
+                        <span class="sharp-border px-3 py-1 group-hover:border-white transition-colors">Prototyping</span>
+                    </div>
+                </a>
+
+            </div>
+        </section>
+
+        <section id="projects" class="py-24 reveal">
+            <h2 class="text-4xl font-black uppercase tracking-tighter mb-12 border-b-4 border-white pb-4 inline-block">Execution_Logs</h2>
+            
+            <div class="sharp-border-t">
+                
+                <div class="data-row flex flex-col md:flex-row sharp-border-b py-10 gap-8">
+                    <div class="md:w-1/4">
+                        <p class="font-mono text-textMuted text-xs tracking-widest uppercase mb-2">P-01 // Pipeline</p>
+                        <h3 class="text-3xl font-black uppercase mb-4 leading-none">Stroke<br>Prediction</h3>
+                        <a href="https://github.com/Charanteja009/Stroke-Prediction" target="_blank" class="font-mono text-sm uppercase tracking-widest border-b border-white pb-1 hover:text-textMuted"><i class="fab fa-github"></i> Repository</a>
+                    </div>
+                    <div class="md:w-2/4">
+                        <p class="text-textMuted font-mono text-sm leading-relaxed text-justify">
+                            End-to-end ML pipeline built in Python using Pandas and scikit-learn. Conducted deep exploratory data analysis (EDA), identifying critical patterns such as elevated stroke risks in patients with glucose > 200 mg/dLs. Evaluated multiple classifiers and achieved ~0.79 ROC-AUC with an optimal LDA model.
+                        </p>
+                    </div>
+                    <div class="md:w-1/4 flex flex-col gap-2 font-mono text-xs uppercase text-right justify-start">
+                        <span class="bg-white text-black px-3 py-1 font-bold">Python</span>
+                        <span class="sharp-border px-3 py-1">Scikit-Learn</span>
+                        <span class="sharp-border px-3 py-1">Pandas</span>
+                        <span class="sharp-border px-3 py-1">Flask</span>
+                    </div>
+                </div>
+
+                <div class="data-row flex flex-col md:flex-row sharp-border-b py-10 gap-8">
+                    <div class="md:w-1/4">
+                        <p class="font-mono text-textMuted text-xs tracking-widest uppercase mb-2">P-02 // Analytics</p>
+                        <h3 class="text-3xl font-black uppercase mb-4 leading-none">Customer<br>Churn</h3>
+                        <a href="https://github.com/Charanteja009/Customer-churn-Data-Science-Project" target="_blank" class="font-mono text-sm uppercase tracking-widest border-b border-white pb-1 hover:text-textMuted"><i class="fab fa-github"></i> Repository</a>
+                    </div>
+                    <div class="md:w-2/4">
+                        <p class="text-textMuted font-mono text-sm leading-relaxed text-justify">
+                            Designed a robust predictive model to forecast telecom customer attrition. Applied rigorous preprocessing to handle missing values, mitigate outliers, and balance class weights. Analyzed critical factors including tenure and usage frequency, achieving 80% accuracy via Logistic Regression.
+                        </p>
+                    </div>
+                    <div class="md:w-1/4 flex flex-col gap-2 font-mono text-xs uppercase text-right justify-start">
+                        <span class="bg-white text-black px-3 py-1 font-bold">Pandas</span>
+                        <span class="sharp-border px-3 py-1">NumPy</span>
+                        <span class="sharp-border px-3 py-1">Seaborn</span>
+                    </div>
+                </div>
+
+                <div class="data-row flex flex-col md:flex-row sharp-border-b py-10 gap-8">
+                    <div class="md:w-1/4">
+                        <p class="font-mono text-textMuted text-xs tracking-widest uppercase mb-2">P-03 // Database</p>
+                        <h3 class="text-3xl font-black uppercase mb-4 leading-none">Pizza Sales<br>SQL Analytics</h3>
+                        <a href="https://github.com/Charanteja009/Pizza-Sales-Analysis" target="_blank" class="font-mono text-sm uppercase tracking-widest border-b border-white pb-1 hover:text-textMuted"><i class="fab fa-github"></i> Repository</a>
+                    </div>
+                    <div class="md:w-2/4">
+                        <p class="text-textMuted font-mono text-sm leading-relaxed text-justify">
+                            Interrogated large-scale sales datasets using advanced SQL methodologies. Utilized complex JOINs and GROUP BY operations to evaluate category-wise distribution, pinpoint hourly demand spikes, and calculate dynamic cumulative revenue trends for business intelligence.
+                        </p>
+                    </div>
+                    <div class="md:w-1/4 flex flex-col gap-2 font-mono text-xs uppercase text-right justify-start">
+                        <span class="bg-white text-black px-3 py-1 font-bold">MySQL</span>
+                        <span class="sharp-border px-3 py-1">Data Analytics</span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="education" class="py-24 reveal">
+            <h2 class="text-4xl font-black uppercase tracking-tighter mb-16 border-b-4 border-white pb-4 inline-block">Academic_Record</h2>
+            
+            <div class="relative border-l-2 border-borderMain ml-4 md:ml-0 space-y-12 pb-4">
+                
+                <div class="relative pl-8 md:pl-12 reveal">
+                    <div class="absolute w-4 h-4 bg-white -left-[9px] top-1 sharp-border"></div>
+                    <div class="sharp-border p-8 bg-[#0a0a0a] hover:bg-white hover:text-black transition-all duration-300 group max-w-4xl">
+                        <div class="flex flex-col md:flex-row md:justify-between md:items-start mb-2">
+                            <h3 class="text-2xl font-black uppercase mb-2 md:mb-0">B.Tech Computer Science</h3>
+                            <span class="font-mono text-xs font-bold bg-white text-black group-hover:bg-black group-hover:text-white px-3 py-1 uppercase self-start transition-colors">Present</span>
+                        </div>
+                        <p class="font-mono text-sm opacity-80 group-hover:opacity-100 transition-opacity mb-4">Lovely Professional University</p>
+                        <p class="font-mono text-xs text-textMuted border-l-2 border-textMuted group-hover:border-black group-hover:text-black pl-4 py-1 transition-colors">
+                            <strong>Core Focus:</strong> Machine Learning, Data Structures & Algorithms, Advanced SQL, and Predictive Analytics.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="relative pl-8 md:pl-12 reveal" style="transition-delay: 100ms;">
+                    <div class="absolute w-4 h-4 bg-[#0a0a0a] border-2 border-white -left-[9px] top-1"></div>
+                    <div class="sharp-border p-8 bg-[#050505] hover:bg-[#0a0a0a] transition-colors max-w-4xl">
+                        <div class="flex flex-col md:flex-row md:justify-between md:items-start mb-2">
+                            <h3 class="text-2xl font-black uppercase mb-2 md:mb-0">Intermediate</h3>
+                            <span class="font-mono text-xs font-bold sharp-border px-3 py-1 text-textMuted uppercase self-start">2023</span>
+                        </div>
+                        <p class="font-mono text-sm text-textMuted mb-4">Sri Chaitanya Junior College</p>
+                        <div class="flex items-center gap-4">
+                            <div class="inline-block sharp-border px-4 py-2 font-mono text-sm text-white bg-[#0a0a0a]">
+                                Score // <span class="font-bold">97.4%</span>
+                            </div>
+                            <p class="font-mono text-xs text-textMuted border-l-2 border-borderMain pl-4 py-1">
+                                Mathematics, Physics, and Chemistry (MPC).
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative pl-8 md:pl-12 reveal" style="transition-delay: 200ms;">
+                    <div class="absolute w-4 h-4 bg-[#0a0a0a] border-2 border-borderMain -left-[9px] top-1"></div>
+                    <div class="sharp-border p-8 bg-[#050505] hover:bg-[#0a0a0a] transition-colors max-w-4xl">
+                        <div class="flex flex-col md:flex-row md:justify-between md:items-start mb-2">
+                            <h3 class="text-2xl font-black uppercase mb-2 md:mb-0">Matriculation</h3>
+                            <span class="font-mono text-xs font-bold sharp-border px-3 py-1 text-textMuted uppercase self-start">2021</span>
+                        </div>
+                        <p class="font-mono text-sm text-textMuted mb-4">SPC Sreshty MPL High School</p>
+                        <div class="flex items-center gap-4">
+                            <div class="inline-block sharp-border px-4 py-2 font-mono text-sm text-white bg-[#0a0a0a]">
+                                Score // <span class="font-bold">94.0%</span>
+                            </div>
+                            <p class="font-mono text-xs text-textMuted border-l-2 border-borderMain pl-4 py-1">
+                                Foundational studies in analytical sciences.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="credentials" class="py-24 reveal">
+            
+            <div class="mb-24">
+                <h2 class="text-3xl font-black uppercase tracking-tighter mb-10 border-b-2 border-borderMain pb-4 inline-block">Tech_Certificates</h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    
+                    <a href="https://drive.google.com/file/d/1vHrcSGEFSGyTD0CRYKxXFPSk3Xm_saMC/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="sharp-border p-6 bg-[#0a0a0a] flex items-start flex-col gap-4 float-card hover:bg-white hover:text-black transition-colors cursor-pointer group block">
+                        <div class="flex justify-between w-full">
+                            <i class="fas fa-database text-3xl group-hover:text-black text-white transition-colors"></i>
+                            <i class="fas fa-external-link-alt opacity-0 group-hover:opacity-100 transition-opacity"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-bold uppercase mb-1">Oracle Analytics Cloud</h3>
+                            <p class="font-mono text-xs uppercase tracking-widest opacity-70 border-t border-borderMain group-hover:border-black pt-2 mt-2">Oracle</p>
+                        </div>
+                    </a>
+
+                    <a href="https://drive.google.com/file/d/1Wju62khqXkfp64K_24dVimhT_n_HAnuK/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="sharp-border p-6 bg-[#0a0a0a] flex items-start flex-col gap-4 float-card float-delay-1 hover:bg-white hover:text-black transition-colors cursor-pointer group block">
+                        <div class="flex justify-between w-full">
+                            <i class="fas fa-chart-line text-3xl group-hover:text-black text-white transition-colors"></i>
+                            <i class="fas fa-external-link-alt opacity-0 group-hover:opacity-100 transition-opacity"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-bold uppercase mb-1">Intro to Data Analytics</h3>
+                            <p class="font-mono text-xs uppercase tracking-widest opacity-70 border-t border-borderMain group-hover:border-black pt-2 mt-2">IBM</p>
+                        </div>
+                    </a>
+                    
+                    <a href="https://drive.google.com/file/d/1z_xUDLk8OqlxRpu1pZu52LmsvqEslXdT/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="sharp-border p-6 bg-[#0a0a0a] flex items-start flex-col gap-4 float-card float-delay-2 hover:bg-white hover:text-black transition-colors cursor-pointer group block">
+                        <div class="flex justify-between w-full">
+                            <i class="fas fa-code text-3xl group-hover:text-black text-white transition-colors"></i>
+                            <i class="fas fa-external-link-alt opacity-0 group-hover:opacity-100 transition-opacity"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-bold uppercase mb-1">Java Language</h3>
+                            <p class="font-mono text-xs uppercase tracking-widest opacity-70 border-t border-borderMain group-hover:border-black pt-2 mt-2">Coursera</p>
+                        </div>
+                    </a>
+
+                    <a href="https://drive.google.com/file/d/1G_wt_HaDktvvgJ60Nxk01Ow3nuTqwvuM/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="sharp-border p-6 bg-[#0a0a0a] flex items-start flex-col gap-4 float-card float-delay-3 hover:bg-white hover:text-black transition-colors cursor-pointer group block">
+                        <div class="flex justify-between w-full">
+                            <i class="fas fa-laptop-code text-3xl group-hover:text-black text-white transition-colors"></i>
+                            <i class="fas fa-external-link-alt opacity-0 group-hover:opacity-100 transition-opacity"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-bold uppercase mb-1">Data Science and ML</h3>
+                            <p class="font-mono text-xs uppercase tracking-widest opacity-70 border-t border-borderMain group-hover:border-black pt-2 mt-2">GeeksforGeeks</p>
+                        </div>
+                    </a>
+
+                    <a href="https://drive.google.com/file/d/1Se_Ad4A6JlWkgYjZGxf4we3drNp8TqGA/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="sharp-border p-6 bg-[#0a0a0a] flex items-start flex-col gap-4 float-card float-delay-4 hover:bg-white hover:text-black transition-colors cursor-pointer group block">
+                        <div class="flex justify-between w-full">
+                            <i class="fas fa-file-code text-3xl group-hover:text-black text-white transition-colors"></i>
+                            <i class="fas fa-external-link-alt opacity-0 group-hover:opacity-100 transition-opacity"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-bold uppercase mb-1">HTML, CSS, JS</h3>
+                            <p class="font-mono text-xs uppercase tracking-widest opacity-70 border-t border-borderMain group-hover:border-black pt-2 mt-2">FreeCodeCamp</p>
+                        </div>
+                    </a>
+
+                </div>
+            </div>
+
+            <div>
+                <h2 class="text-3xl font-black uppercase tracking-tighter mb-10 border-b-2 border-borderMain pb-4 inline-block">Achievements</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    
+                    <div class="sharp-border p-6 bg-[#0a0a0a] flex items-center justify-between group hover:bg-white hover:text-black transition-colors cursor-default">
+                        <div class="flex items-center gap-6">
+                            <i class="fas fa-star text-2xl group-hover:text-black text-white transition-colors"></i>
+                            <div>
+                                <h3 class="text-lg font-bold uppercase mb-1">3 Stars in SQL</h3>
+                                <p class="font-mono text-xs uppercase tracking-widest opacity-70">HackerRank</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="sharp-border p-6 bg-[#0a0a0a] flex items-center justify-between group hover:bg-white hover:text-black transition-colors cursor-default">
+                        <div class="flex items-center gap-6">
+                            <i class="fas fa-laptop-code text-2xl group-hover:text-black text-white transition-colors"></i>
+                            <div>
+                                <h3 class="text-lg font-bold uppercase mb-1">100+ DSA Problems</h3>
+                                <p class="font-mono text-xs uppercase tracking-widest opacity-70">LeetCode</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="sharp-border p-6 bg-[#0a0a0a] flex items-center justify-between group hover:bg-white hover:text-black transition-colors cursor-default">
+                        <div class="flex items-center gap-6">
+                            <i class="fas fa-briefcase text-2xl group-hover:text-black text-white transition-colors"></i>
+                            <div>
+                                <h3 class="text-lg font-bold uppercase mb-1">Naukri Campus Profile</h3>
+                                <p class="font-mono text-xs uppercase tracking-widest opacity-70">Naukri</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </section>
+
+        <section id="contact" class="py-24 reveal">
+            <div class="sharp-border p-12 text-center bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMSIgY3k9IjEiIHI9IjEiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4wNSkiLz48L3N2Zz4=')]">
+                <p class="font-mono text-textMuted text-sm tracking-widest uppercase mb-4">Initialize Comm Link</p>
+                <h2 class="text-5xl md:text-7xl font-black uppercase tracking-tighter mb-8">Establish<br>Connection</h2>
+                
+                <div class="flex flex-col md:flex-row justify-center gap-6 mb-12 font-mono text-sm uppercase font-bold tracking-widest">
+                    <a href="mailto:charangattu8@gmail.com" class="sharp-border py-4 px-8 bg-[#050505] hover:bg-white hover:text-black transition-colors flex items-center justify-center block">
+                        <i class="fas fa-envelope mr-3"></i> charangattu8@gmail.com
+                    </a>
+                    <a href="tel:+919390852697" class="sharp-border py-4 px-8 bg-[#050505] hover:bg-white hover:text-black transition-colors flex items-center justify-center block">
+                        <i class="fas fa-phone mr-3"></i> +91-9390852697
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="py-8 text-center border-t border-borderMain bg-[#050505] z-50 relative">
+        <p class="font-mono text-xs text-textMuted uppercase tracking-widest">Data Structure &copy; 2026 // Gattu Charan Teja</p>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            
+            // 1. Multi-Color Spotlight Logic
+            const cursor = document.getElementById('cursor');
+            
+            window.addEventListener('mousemove', (e) => {
+                const posX = e.clientX;
+                const posY = e.clientY;
+                
+                // Set CSS variables for the color-dodge mask
+                document.documentElement.style.setProperty('--mouse-x', `${posX}px`);
+                document.documentElement.style.setProperty('--mouse-y', `${posY}px`);
+                
+                // Move the crosshair
+                cursor.style.transform = `translate(calc(-50% + ${posX}px), calc(-50% + ${posY}px))`;
+            });
+
+            // Make crosshair react to interactable elements
+            const interactables = document.querySelectorAll('a, .data-row, .sharp-border, .float-card');
+            interactables.forEach(el => {
+                el.addEventListener('mouseenter', () => {
+                    cursor.style.width = '40px';
+                    cursor.style.height = '40px';
+                    cursor.style.border = '2px solid white';
+                });
+                el.addEventListener('mouseleave', () => {
+                    cursor.style.width = '24px';
+                    cursor.style.height = '24px';
+                    cursor.style.border = 'none';
+                });
+            });
+
+            // 2. Typing Effect
+            const roles = ["Data Scientist", "Machine Learning Eng", "Data Analyst"];
+            const typeWriterElement = document.getElementById("typewriter");
+            let roleIndex = 0, charIndex = 0, isDeleting = false;
+
+            function type() {
+                const currentRole = roles[roleIndex];
+                if (isDeleting) {
+                    typeWriterElement.textContent = currentRole.substring(0, charIndex - 1);
+                    charIndex--;
+                } else {
+                    typeWriterElement.textContent = currentRole.substring(0, charIndex + 1);
+                    charIndex++;
+                }
+
+                let typingSpeed = isDeleting ? 30 : 60;
+
+                if (!isDeleting && charIndex === currentRole.length) {
+                    typingSpeed = 2000; isDeleting = true;
+                } else if (isDeleting && charIndex === 0) {
+                    isDeleting = false; roleIndex = (roleIndex + 1) % roles.length; typingSpeed = 500;
+                }
+                setTimeout(type, typingSpeed);
+            }
+            setTimeout(type, 1000);
+
+            // 3. Scroll Reveals
+            const revealObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                        revealObserver.unobserve(entry.target); 
+                    }
+                });
+            }, { threshold: 0.1, rootMargin: "0px 0px -50px 0px" });
+
+            document.querySelectorAll('.reveal').forEach(el => {
+                revealObserver.observe(el);
+            });
+        });
+    </script>
+</body>
+</html>
