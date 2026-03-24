@@ -1,18 +1,21 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kedara Sri Surya Manobhiram | Data & Software Engineer</title>
-    
+
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
     <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
+
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -27,18 +30,26 @@
             }
         }
     </script>
-    
+
     <style>
         body {
             /* Black and White Minimalist Background */
             background: #ffffff;
-            color: #111827; /* Gray-900 */
+            color: #111827;
+            /* Gray-900 */
             font-family: 'Inter', sans-serif;
             overflow-x: hidden;
             min-height: 100vh;
         }
 
-        h1, h2, h3, h4, h5, h6 { font-family: 'Outfit', sans-serif; }
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: 'Outfit', sans-serif;
+        }
 
         /* Ambient Subtle Grayscale Orbs */
         .orb {
@@ -49,15 +60,50 @@
             opacity: 0.5;
             animation: float 25s infinite ease-in-out alternate;
         }
-        .orb-1 { top: 0%; left: -10%; width: 50vw; height: 50vw; background: #e5e7eb; animation-delay: 0s; }
-        .orb-2 { bottom: -10%; right: -10%; width: 60vw; height: 60vw; background: #f3f4f6; animation-delay: -5s; }
-        .orb-3 { top: 30%; left: 40%; width: 40vw; height: 40vw; background: #e2e8f0; animation-delay: -10s; }
+
+        .orb-1 {
+            top: 0%;
+            left: -10%;
+            width: 50vw;
+            height: 50vw;
+            background: #e5e7eb;
+            animation-delay: 0s;
+        }
+
+        .orb-2 {
+            bottom: -10%;
+            right: -10%;
+            width: 60vw;
+            height: 60vw;
+            background: #f3f4f6;
+            animation-delay: -5s;
+        }
+
+        .orb-3 {
+            top: 30%;
+            left: 40%;
+            width: 40vw;
+            height: 40vw;
+            background: #e2e8f0;
+            animation-delay: -10s;
+        }
 
         @keyframes float {
-            0% { transform: translate(0, 0) scale(1); }
-            33% { transform: translate(5%, 8%) scale(1.05); }
-            66% { transform: translate(-5%, 4%) scale(0.95); }
-            100% { transform: translate(8%, -5%) scale(1.02); }
+            0% {
+                transform: translate(0, 0) scale(1);
+            }
+
+            33% {
+                transform: translate(5%, 8%) scale(1.05);
+            }
+
+            66% {
+                transform: translate(-5%, 4%) scale(0.95);
+            }
+
+            100% {
+                transform: translate(8%, -5%) scale(1.02);
+            }
         }
 
         /* Light/White Frosted Glass */
@@ -67,15 +113,15 @@
             -webkit-backdrop-filter: blur(20px);
             border: 1px solid rgba(0, 0, 0, 0.08);
             border-radius: 1.5rem;
-            box-shadow: 0 10px 40px -10px rgba(0,0,0,0.05);
+            box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.05);
             transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
         }
-        
+
         .glass-panel:hover {
             background: rgba(255, 255, 255, 0.98);
             border-color: rgba(0, 0, 0, 0.15);
             transform: translateY(-4px);
-            box-shadow: 0 20px 50px -10px rgba(0,0,0,0.1);
+            box-shadow: 0 20px 50px -10px rgba(0, 0, 0, 0.1);
         }
 
         /* Minimalist Text Highlight */
@@ -85,23 +131,37 @@
         }
 
         /* Scroll Animations */
-        .reveal { 
-            opacity: 0; 
-            transform: translateY(40px); 
-            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1); 
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
         }
-        .reveal.active { 
-            opacity: 1; 
-            transform: translateY(0); 
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
         }
 
         /* Custom Scrollbar */
-        ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: #f9fafb; }
-        ::-webkit-scrollbar-thumb { background: #d1d5db; border-radius: 4px; }
-        ::-webkit-scrollbar-thumb:hover { background: #9ca3af; }
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #f9fafb;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #d1d5db;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #9ca3af;
+        }
     </style>
 </head>
+
 <body class="relative">
 
     <!-- Background Orbs -->
@@ -121,13 +181,25 @@
                 Surya.M
             </a>
             <div class="hidden md:flex items-center space-x-2 font-heading text-sm font-semibold text-gray-600">
-                <a href="#about" class="px-5 py-2.5 rounded-full hover:bg-gray-100 hover:text-black transition-all">About My Philosophy</a>
-                <a href="#skills" class="px-5 py-2.5 rounded-full hover:bg-gray-100 hover:text-black transition-all">Technical Arsenal</a>
-                <a href="#projects" class="px-5 py-2.5 rounded-full hover:bg-gray-100 hover:text-black transition-all">Deep-Dive Projects</a>
-                <a href="#education" class="px-5 py-2.5 rounded-full hover:bg-gray-100 hover:text-black transition-all">Career Timeline</a>
+                <a href="#about"
+                    class="px-3 xl:px-5 py-2.5 rounded-full hover:bg-gray-100 hover:text-black transition-all">About My
+                    Philosophy</a>
+                <a href="#skills"
+                    class="px-3 xl:px-5 py-2.5 rounded-full hover:bg-gray-100 hover:text-black transition-all">Technical
+                    Arsenal</a>
+                <a href="#projects"
+                    class="px-3 xl:px-5 py-2.5 rounded-full hover:bg-gray-100 hover:text-black transition-all">Deep-Dive
+                    Projects</a>
+                <a href="#education"
+                    class="px-3 xl:px-5 py-2.5 rounded-full hover:bg-gray-100 hover:text-black transition-all">Career
+                    Timeline</a>
+                <a href="#resume"
+                    class="px-3 xl:px-5 py-2.5 rounded-full hover:bg-gray-100 hover:text-black transition-all whitespace-nowrap">View
+                    Resume</a>
             </div>
-            <a href="#contact" class="hidden md:block px-6 py-3 rounded-full bg-black text-white font-heading font-bold text-sm tracking-wide hover:bg-gray-800 hover:shadow-lg transition-all border border-transparent">
-                Initialize Contact
+            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=mmanobhiram8@gmail.com" target="_blank"
+                class="hidden md:flex items-center gap-2 px-6 py-3 rounded-full bg-black text-white font-heading font-bold text-sm tracking-wide hover:bg-gray-800 hover:shadow-lg transition-all border border-transparent">
+                <i class="fas fa-envelope"></i> Mail Me Directly
             </a>
             <button class="md:hidden text-black text-2xl p-2"><i class="fas fa-bars"></i></button>
         </div>
@@ -137,52 +209,69 @@
     <header class="relative min-h-screen flex items-center justify-center pt-24 pb-12 px-6">
         <div class="max-w-7xl mx-auto w-full z-10 reveal active">
             <div class="flex flex-col-reverse md:flex-row items-center justify-between gap-12 lg:gap-20">
-                
+
                 <!-- Left Content -->
                 <div class="flex-1 text-center md:text-left">
-                    <div class="inline-flex items-center gap-3 px-6 py-3 rounded-full border border-gray-200 bg-white mb-8 shadow-sm">
+                    <div
+                        class="inline-flex items-center gap-3 px-6 py-3 rounded-full border border-gray-200 bg-white mb-8 shadow-sm">
                         <span class="relative flex h-3 w-3">
-                          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-black opacity-75"></span>
-                          <span class="relative inline-flex rounded-full h-3 w-3 bg-gray-900"></span>
+                            <span
+                                class="animate-ping absolute inline-flex h-full w-full rounded-full bg-black opacity-75"></span>
+                            <span class="relative inline-flex rounded-full h-3 w-3 bg-gray-900"></span>
                         </span>
-                        <span class="text-sm font-bold tracking-widest uppercase text-gray-900">Available for Technical Challenges</span>
+                        <span class="text-sm font-bold tracking-widest uppercase text-gray-900">Available for Technical
+                            Challenges</span>
                     </div>
 
-                    <h1 class="text-5xl md:text-7xl lg:text-[6rem] font-black tracking-tighter leading-[1.05] mb-8 text-black">
+                    <h1
+                        class="text-5xl md:text-7xl lg:text-[6rem] font-black tracking-tighter leading-[1.05] mb-8 text-black">
                         Decoding Data.<br>
                         <span class="text-gray-400">Engineering Systems.</span>
                     </h1>
-                    
-                    <p class="text-xl md:text-2xl text-gray-600 font-light max-w-2xl mx-auto md:mx-0 mb-10 leading-relaxed">
-                        I am <strong class="text-black font-bold tracking-wide">Kedara Sri Surya Manobhiram</strong>, a progressive Computer Science Engineer dedicated to transforming raw analytical data into scalable, high-performance software architectures.
+
+                    <p
+                        class="text-xl md:text-2xl text-gray-600 font-light max-w-2xl mx-auto md:mx-0 mb-10 leading-relaxed">
+                        I am <strong class="text-black font-bold tracking-wide">Kedara Sri Surya Manobhiram</strong>, a
+                        progressive Computer Science Engineer dedicated to transforming raw analytical data into
+                        scalable, high-performance software architectures.
                     </p>
-                    
+
                     <div class="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-4">
-                        <a href="#projects" class="px-8 py-4 rounded-full bg-black text-white font-bold text-lg hover:-translate-y-1 hover:shadow-xl transition-all w-full sm:w-auto flex items-center justify-center gap-3">
+                        <a href="#projects"
+                            class="px-8 py-4 rounded-full bg-black text-white font-bold text-lg hover:-translate-y-1 hover:shadow-xl transition-all w-full sm:w-auto flex items-center justify-center gap-3">
                             Dive Into My Work <i class="fas fa-arrow-right"></i>
                         </a>
-                        <a href="C:/Users/mmano/Downloads/manobhiram_sp_main%20(1).pdf" download="Manobhiram_CV.pdf" class="px-8 py-4 rounded-full bg-white text-black border-2 border-gray-200 font-bold text-lg hover:border-black hover:-translate-y-1 hover:shadow-xl transition-all w-full sm:w-auto flex items-center justify-center gap-3">
-                            <i class="fas fa-file-pdf"></i> Download Resume
+                        <a href="./resume_full.pdf" download="Surya_Manobhiram_CV_Full.pdf"
+                            class="px-8 py-4 rounded-full bg-white text-black border-2 border-gray-200 font-bold text-lg hover:border-black hover:-translate-y-1 hover:shadow-xl transition-all w-full sm:w-auto flex items-center justify-center gap-3">
+                            <i class="fas fa-file-pdf"></i> Download Full Resume
                         </a>
                     </div>
 
                     <!-- Social Links -->
                     <div class="flex justify-center md:justify-start gap-4 mt-12">
-                        <a href="https://github.com/Abhi12305323" target="_blank" class="w-14 h-14 rounded-full bg-white border border-gray-200 flex items-center justify-center text-gray-600 hover:bg-black hover:text-white hover:border-black hover:scale-110 transition-all shadow-sm"><i class="fab fa-github text-xl"></i></a>
-                        <a href="https://linkedin.com/in/abhiram" target="_blank" class="w-14 h-14 rounded-full bg-white border border-gray-200 flex items-center justify-center text-gray-600 hover:bg-black hover:text-white hover:border-black hover:scale-110 transition-all shadow-sm"><i class="fab fa-linkedin-in text-xl"></i></a>
-                        <a href="mailto:mmanobhiram8@gmail.com" class="w-14 h-14 rounded-full bg-white border border-gray-200 flex items-center justify-center text-gray-600 hover:bg-black hover:text-white hover:border-black hover:scale-110 transition-all shadow-sm"><i class="fas fa-envelope text-xl"></i></a>
+                        <a href="https://github.com/Abhi12305323" target="_blank"
+                            class="w-14 h-14 rounded-full bg-white border border-gray-200 flex items-center justify-center text-gray-600 hover:bg-black hover:text-white hover:border-black hover:scale-110 transition-all shadow-sm"><i
+                                class="fab fa-github text-xl"></i></a>
+                        <a href="https://linkedin.com/in/manobhiram07" target="_blank"
+                            class="w-14 h-14 rounded-full bg-white border border-gray-200 flex items-center justify-center text-gray-600 hover:bg-black hover:text-white hover:border-black hover:scale-110 transition-all shadow-sm"><i
+                                class="fab fa-linkedin-in text-xl"></i></a>
+                        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=mmanobhiram8@gmail.com" target="_blank"
+                            class="w-14 h-14 rounded-full bg-white border border-gray-200 flex items-center justify-center text-gray-600 hover:bg-black hover:text-white hover:border-black hover:scale-110 transition-all shadow-sm"><i
+                                class="fas fa-envelope text-xl"></i></a>
                     </div>
                 </div>
 
                 <!-- Right Content: Profile Image -->
                 <div class="flex-1 flex justify-center md:justify-end">
-                    <img src="./profile.jpg" alt="Kedara Sri Surya Manobhiram" class="w-72 h-72 md:w-96 md:h-96 lg:w-[450px] lg:h-[450px] rounded-full object-cover border-[8px] border-white shadow-2xl relative z-10 hover:scale-105 transition-transform duration-500 hover:-rotate-2">
+                    <img src="./profile.jpg" alt="Kedara Sri Surya Manobhiram"
+                        class="w-72 h-72 md:w-96 md:h-96 lg:w-[450px] lg:h-[450px] rounded-full object-cover border-[8px] border-white shadow-2xl relative z-10 hover:scale-105 transition-transform duration-500 hover:-rotate-2">
                 </div>
             </div>
         </div>
-        
+
         <!-- Scroll Indicator -->
-        <a href="#about" class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3 text-gray-400 hover:text-black transition-colors">
+        <a href="#about"
+            class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3 text-gray-400 hover:text-black transition-colors">
             <span class="text-xs font-bold tracking-widest uppercase">Scroll to Discover</span>
             <div class="w-px h-16 bg-gradient-to-b from-gray-400 to-transparent"></div>
         </a>
@@ -193,58 +282,80 @@
         <!-- About Bento Grid -->
         <section id="about" class="pt-16">
             <div class="text-center md:text-left mb-16 reveal">
-                <h2 class="text-5xl md:text-7xl font-black tracking-tight mb-6 text-black">Behind the <span class="text-gray-400">Code</span>.</h2>
-                <p class="text-gray-600 text-xl max-w-2xl">A sophisticated blend of analytical thinking, algorithmic optimization, and modern software development philosophies.</p>
+                <h2 class="text-5xl md:text-7xl font-black tracking-tight mb-6 text-black">Behind the <span
+                        class="text-gray-400">Code</span>.</h2>
+                <p class="text-gray-600 text-xl max-w-2xl">A sophisticated blend of analytical thinking, algorithmic
+                    optimization, and modern software development philosophies.</p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[auto]">
-                
+
                 <!-- Main Bio Card -->
-                <div class="glass-panel p-10 md:p-12 md:col-span-2 md:row-span-2 reveal flex flex-col justify-between relative overflow-hidden group">
+                <div
+                    class="glass-panel p-10 md:p-12 md:col-span-2 md:row-span-2 reveal flex flex-col justify-between relative overflow-hidden group">
                     <div class="absolute top-0 right-0 p-12 opacity-5">
                         <i class="fas fa-fingerprint text-9xl text-black"></i>
                     </div>
                     <div class="relative z-10">
-                        <div class="w-16 h-16 rounded-2xl bg-gray-100 border border-gray-200 flex items-center justify-center mb-8 shadow-sm text-black">
+                        <div
+                            class="w-16 h-16 rounded-2xl bg-gray-100 border border-gray-200 flex items-center justify-center mb-8 shadow-sm text-black">
                             <i class="fas fa-user-astronaut text-3xl"></i>
                         </div>
                         <h3 class="text-4xl font-bold mb-6 text-black">Hello, I'm Surya Manobhiram.</h3>
                         <div class="space-y-6 text-gray-600 text-lg leading-relaxed font-light">
                             <p>
-                                I am currently undergoing rigorous technical education serving as a B.Tech Computer Science student at <strong class="text-black font-bold">Lovely Professional University (Batch 2023–2027)</strong>. My academic journey is heavily punctuated by a profound dedication to algorithmic efficiency and data manipulation.
+                                I am currently undergoing rigorous technical education serving as a B.Tech Computer
+                                Science student at <strong class="text-black font-bold">Lovely Professional University
+                                    (Batch 2023–2027)</strong>. My academic journey is heavily punctuated by a profound
+                                dedication to algorithmic efficiency and data manipulation.
                             </p>
                             <p>
-                                At my core, I function as a <strong class="text-black font-bold">Systems Thinker</strong>. Whether dissecting colossal datasets to unearth market-moving trends using Pandas and Seaborn, or engineering complex game physics relying on collision mathematics and Object-Oriented Programming, I approach every project with an architectural mindset.
+                                At my core, I function as a <strong class="text-black font-bold">Systems
+                                    Thinker</strong>. Whether dissecting colossal datasets to unearth market-moving
+                                trends using Pandas and Seaborn, or engineering complex game physics relying on
+                                collision mathematics and Object-Oriented Programming, I approach every project with an
+                                architectural mindset.
                             </p>
                             <p>
-                                My philosophy is straightforward: <em class="text-gray-900 font-medium">"Elegant code is achieved when data structures perfectly align with the business logic."</em> I strive to build applications that don't just work on the surface, but are highly optimized beneath the hood—navigating the complexities of memory allocation, time complexity, and robust full-stack development.
+                                My philosophy is straightforward: <em class="text-gray-900 font-medium">"Elegant code is
+                                    achieved when data structures perfectly align with the business logic."</em> I
+                                strive to build applications that don't just work on the surface, but are highly
+                                optimized beneath the hood—navigating the complexities of memory allocation, time
+                                complexity, and robust full-stack development.
                             </p>
                         </div>
                     </div>
-                    <div class="flex items-center gap-3 mt-10 bg-gray-100 px-6 py-3 rounded-full w-fit border border-gray-200 shadow-sm text-sm font-bold text-black relative z-10">
+                    <div
+                        class="flex items-center gap-3 mt-10 bg-gray-100 px-6 py-3 rounded-full w-fit border border-gray-200 shadow-sm text-sm font-bold text-black relative z-10">
                         <i class="fas fa-map-marker-alt"></i> Based in Kakinada, Andhra Pradesh, India
                     </div>
                 </div>
 
                 <!-- Education Summary Card -->
                 <div class="glass-panel p-10 reveal flex flex-col justify-center items-center text-center group">
-                    <div class="w-20 h-20 rounded-full bg-black shadow-lg flex items-center justify-center text-white text-3xl mb-6 group-hover:scale-110 transition-transform duration-300">
+                    <div
+                        class="w-20 h-20 rounded-full bg-black shadow-lg flex items-center justify-center text-white text-3xl mb-6 group-hover:scale-110 transition-transform duration-300">
                         <i class="fas fa-graduation-cap"></i>
                     </div>
                     <h3 class="text-2xl font-bold mb-2 text-black">B.Tech in CSE</h3>
                     <p class="text-base text-gray-600 font-medium px-4 mb-4">Lovely Professional University</p>
-                    <p class="text-sm text-gray-500 font-light italic mb-4">Specializing in intelligent systems and robust software architectures.</p>
-                    <span class="mt-auto px-4 py-1.5 bg-gray-100 border border-gray-200 rounded-full text-xs font-bold text-gray-900 tracking-widest uppercase">Class of 2027</span>
+                    <p class="text-sm text-gray-500 font-light italic mb-4">Specializing in intelligent systems and
+                        robust software architectures.</p>
+                    <span
+                        class="mt-auto px-4 py-1.5 bg-gray-100 border border-gray-200 rounded-full text-xs font-bold text-gray-900 tracking-widest uppercase">Class
+                        of 2027</span>
                 </div>
 
                 <!-- Core Focus Card -->
                 <div class="glass-panel p-10 reveal flex flex-col justify-center items-center text-center group">
-                    <div class="w-20 h-20 rounded-full bg-black shadow-lg flex items-center justify-center text-white text-3xl mb-6 group-hover:scale-110 transition-transform duration-300">
+                    <div
+                        class="w-20 h-20 rounded-full bg-black shadow-lg flex items-center justify-center text-white text-3xl mb-6 group-hover:scale-110 transition-transform duration-300">
                         <i class="fas fa-project-diagram"></i>
                     </div>
                     <h3 class="text-2xl font-bold mb-2 text-black">Algorithmic Vision</h3>
                     <p class="text-base text-gray-600 font-medium px-4">Data Structures & Architecture</p>
-                    <p class="text-sm text-gray-500 font-light italic mt-4">Bridging the gap between raw analytical data and functional app logic.</p>
+                    <p class="text-sm text-gray-500 font-light italic mt-4">Bridging the gap between raw analytical data
+                        and functional app logic.</p>
                 </div>
 
             </div>
@@ -253,55 +364,94 @@
         <!-- Technical Skills Details -->
         <section id="skills" class="pt-16 reveal">
             <div class="text-center mb-16">
-                <h2 class="text-5xl md:text-7xl font-black tracking-tight mb-6 text-black">Technical <span class="text-gray-400">Arsenal</span>.</h2>
+                <h2 class="text-5xl md:text-7xl font-black tracking-tight mb-6 text-black">Technical <span
+                        class="text-gray-400">Arsenal</span>.</h2>
                 <div class="w-32 h-1.5 bg-black mx-auto rounded-full"></div>
-                <p class="text-gray-600 text-xl max-w-2xl mx-auto mt-6">A comprehensive breakdown of the languages, libraries, and foundational computer science principles I utilize to build modern solutions.</p>
+                <p class="text-gray-600 text-xl max-w-2xl mx-auto mt-6">A comprehensive breakdown of the languages,
+                    libraries, and foundational computer science principles I utilize to build modern solutions.</p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                
+
                 <!-- Languages & Logic -->
                 <div class="glass-panel p-10 reveal group hover:bg-gray-50 transition-all">
-                    <div class="w-16 h-16 rounded-2xl bg-black text-white flex items-center justify-center text-3xl mb-8 shadow-md group-hover:scale-110 transition-transform">
+                    <div
+                        class="w-16 h-16 rounded-2xl bg-black text-white flex items-center justify-center text-3xl mb-8 shadow-md group-hover:scale-110 transition-transform">
                         <i class="fas fa-file-code"></i>
                     </div>
                     <h3 class="text-2xl font-bold mb-4 text-black">Languages & Core DB</h3>
-                    <p class="text-base text-gray-600 mb-8 leading-relaxed font-light">My primary mechanisms for communicating with hardware and databases. I leverage strict typing in Java for enterprise logic, flexibility in Python for analysis, and SQL for robust relational data retrieval systems.</p>
+                    <p class="text-base text-gray-600 mb-8 leading-relaxed font-light">My primary mechanisms for
+                        communicating with hardware and databases. I leverage strict typing in Java for enterprise
+                        logic, flexibility in Python for analysis, and SQL for robust relational data retrieval systems.
+                    </p>
                     <div class="flex flex-wrap gap-3 mt-auto">
-                        <span class="px-4 py-2 bg-gray-100 text-black font-bold rounded-lg text-sm border border-gray-200 shadow-sm">Java</span>
-                        <span class="px-4 py-2 bg-gray-100 text-black font-bold rounded-lg text-sm border border-gray-200 shadow-sm">Python</span>
-                        <span class="px-4 py-2 bg-gray-100 text-black font-bold rounded-lg text-sm border border-gray-200 shadow-sm">C</span>
-                        <span class="px-4 py-2 bg-gray-100 text-black font-bold rounded-lg text-sm border border-gray-200 shadow-sm">SQL / MySQL</span>
+                        <span
+                            class="px-4 py-2 bg-gray-100 text-black font-bold rounded-lg text-sm border border-gray-200 shadow-sm">Python</span>
+                        <span
+                            class="px-4 py-2 bg-gray-100 text-black font-bold rounded-lg text-sm border border-gray-200 shadow-sm">C
+                            / C++</span>
+                        <span
+                            class="px-4 py-2 bg-gray-100 text-black font-bold rounded-lg text-sm border border-gray-200 shadow-sm">Java</span>
+                        <span
+                            class="px-4 py-2 bg-gray-100 text-black font-bold rounded-lg text-sm border border-gray-200 shadow-sm">SQL
+                            / MySQL</span>
                     </div>
                 </div>
 
                 <!-- Analysis Libraries -->
-                <div class="glass-panel p-10 reveal group hover:bg-gray-50 transition-all" style="transition-delay: 100ms;">
-                    <div class="w-16 h-16 rounded-2xl bg-black text-white flex items-center justify-center text-3xl mb-8 shadow-md group-hover:scale-110 transition-transform">
+                <div class="glass-panel p-10 reveal group hover:bg-gray-50 transition-all"
+                    style="transition-delay: 100ms;">
+                    <div
+                        class="w-16 h-16 rounded-2xl bg-black text-white flex items-center justify-center text-3xl mb-8 shadow-md group-hover:scale-110 transition-transform">
                         <i class="fas fa-chart-bar"></i>
                     </div>
-                    <h3 class="text-2xl font-bold mb-4 text-black">Data Analysis Ecosystem</h3>
-                    <p class="text-base text-gray-600 mb-8 leading-relaxed font-light">Transforming ambiguous numbers into decisive visual intelligence. I utilize advanced dataframe manipulation and multi-layered plotting to generate stakeholders' insights directly translating to business growth schemas.</p>
+                    <h3 class="text-2xl font-bold mb-4 text-black">Data Science & Analysis</h3>
+                    <p class="text-base text-gray-600 mb-8 leading-relaxed font-light">Transforming ambiguous numbers
+                        into decisive visual intelligence and intelligent models. I leverage advanced dataframe
+                        manipulation and machine learning frameworks to generate predictive insights and scalable
+                        analytical solutions.</p>
                     <div class="flex flex-wrap gap-3 mt-auto">
-                        <span class="px-4 py-2 bg-gray-100 text-black font-bold rounded-lg text-sm border border-gray-200 shadow-sm">Pandas</span>
-                        <span class="px-4 py-2 bg-gray-100 text-black font-bold rounded-lg text-sm border border-gray-200 shadow-sm">Matplotlib</span>
-                        <span class="px-4 py-2 bg-gray-100 text-black font-bold rounded-lg text-sm border border-gray-200 shadow-sm">Seaborn</span>
-                        <span class="px-4 py-2 bg-gray-100 text-black font-bold rounded-lg text-sm border border-gray-200 shadow-sm">Data Cleaning</span>
+                        <span
+                            class="px-4 py-2 bg-gray-100 text-black font-bold rounded-lg text-sm border border-gray-200 shadow-sm">Pandas
+                            / NumPy</span>
+                        <span
+                            class="px-4 py-2 bg-gray-100 text-black font-bold rounded-lg text-sm border border-gray-200 shadow-sm">Scikit-Learn</span>
+                        <span
+                            class="px-4 py-2 bg-gray-100 text-black font-bold rounded-lg text-sm border border-gray-200 shadow-sm">PyTorch
+                            / TF</span>
+                        <span
+                            class="px-4 py-2 bg-gray-100 text-black font-bold rounded-lg text-sm border border-gray-200 shadow-sm">Seaborn</span>
                     </div>
                 </div>
 
                 <!-- Web & Tools -->
-                <div class="glass-panel p-10 reveal group hover:bg-gray-50 transition-all" style="transition-delay: 200ms;">
-                    <div class="w-16 h-16 rounded-2xl bg-black text-white flex items-center justify-center text-3xl mb-8 shadow-md group-hover:scale-110 transition-transform">
+                <div class="glass-panel p-10 reveal group hover:bg-gray-50 transition-all"
+                    style="transition-delay: 200ms;">
+                    <div
+                        class="w-16 h-16 rounded-2xl bg-black text-white flex items-center justify-center text-3xl mb-8 shadow-md group-hover:scale-110 transition-transform">
                         <i class="fas fa-server"></i>
                     </div>
                     <h3 class="text-2xl font-bold mb-4 text-black">Version Control & Web Tools</h3>
-                    <p class="text-base text-gray-600 mb-8 leading-relaxed font-light">Ensuring deployment fidelity and creating user-facing dashboards. Through Git pipelines, Jupyter prototyping environments, and core web APIs, I manage product lifecycles from ideation straight through to production servers.</p>
+                    <p class="text-base text-gray-600 mb-8 leading-relaxed font-light">Ensuring deployment fidelity and
+                        creating user-facing dashboards. Through Git pipelines, Jupyter prototyping environments, and
+                        core web APIs, I manage product lifecycles from ideation straight through to production servers.
+                    </p>
                     <div class="flex flex-wrap gap-3 mt-auto">
-                        <span class="px-4 py-2 bg-gray-100 text-black font-bold rounded-lg text-sm border border-gray-200 shadow-sm">HTML/CSS/JS</span>
-                        <span class="px-4 py-2 bg-gray-100 text-black font-bold rounded-lg text-sm border border-gray-200 shadow-sm">Git/GitHub</span>
-                        <span class="px-4 py-2 bg-gray-100 text-black font-bold rounded-lg text-sm border border-gray-200 shadow-sm">Jupyter Server</span>
-                        <span class="px-4 py-2 bg-gray-100 text-black font-bold rounded-lg text-sm border border-gray-200 shadow-sm">Tableau BI</span>
+                        <span
+                            class="px-4 py-2 bg-gray-100 text-black font-bold rounded-lg text-sm border border-gray-200 shadow-sm">HTML/CSS/JS</span>
+                        <span
+                            class="px-4 py-2 bg-gray-100 text-black font-bold rounded-lg text-sm border border-gray-200 shadow-sm">Git/GitHub</span>
+                        <span
+                            class="px-4 py-2 bg-gray-100 text-black font-bold rounded-lg text-sm border border-gray-200 shadow-sm">Jupyter
+                            Server</span>
+                        <span
+                            class="px-4 py-2 bg-gray-100 text-black font-bold rounded-lg text-sm border border-gray-200 shadow-sm">Google
+                            Colab</span>
+                        <span
+                            class="px-4 py-2 bg-gray-100 text-black font-bold rounded-lg text-sm border border-gray-200 shadow-sm">Excel</span>
+                        <span
+                            class="px-4 py-2 bg-gray-100 text-black font-bold rounded-lg text-sm border border-gray-200 shadow-sm">Tableau
+                            BI</span>
                     </div>
                 </div>
 
@@ -310,15 +460,30 @@
                     <h3 class="text-2xl font-bold mb-8 text-black flex items-center gap-4">
                         <i class="fas fa-atom text-3xl text-gray-400"></i> Deep Computing Fundamentals
                     </h3>
-                    <p class="text-base text-gray-600 mb-8 max-w-4xl font-light">Tools and languages come and go, but architectural principles are permanent. My strongest professional trait is a solid, unshakeable grasp of foundational computer science theories, allowing me to adapt rapidly to any given stack while maintaining extremely high code quality and optimal Big-O complexity execution.</p>
-                    
+                    <p class="text-base text-gray-600 mb-8 max-w-4xl font-light">Tools and languages come and go, but
+                        architectural principles are permanent. My strongest professional trait is a solid, unshakeable
+                        grasp of foundational computer science theories, allowing me to adapt rapidly to any given stack
+                        while maintaining extremely high code quality and optimal Big-O complexity execution.</p>
+
                     <div class="flex flex-wrap gap-4">
-                        <span class="px-5 py-3 bg-white hover:bg-gray-100 transition-colors text-black font-bold tracking-wide uppercase text-sm border border-gray-200 shadow-sm flex items-center gap-2"><i class="fas fa-project-diagram opacity-50"></i> Data Structures & Algorithms</span>
-                        <span class="px-5 py-3 bg-white hover:bg-gray-100 transition-colors text-black font-bold tracking-wide uppercase text-sm border border-gray-200 shadow-sm flex items-center gap-2"><i class="fas fa-microchip opacity-50"></i> Operating Systems Architecture</span>
-                        <span class="px-5 py-3 bg-white hover:bg-gray-100 transition-colors text-black font-bold tracking-wide uppercase text-sm border border-gray-200 shadow-sm flex items-center gap-2"><i class="fas fa-network-wired opacity-50"></i> Networking Protocols</span>
-                        <span class="px-5 py-3 bg-white hover:bg-gray-100 transition-colors text-black font-bold tracking-wide uppercase text-sm border border-gray-200 shadow-sm flex items-center gap-2"><i class="fas fa-sitemap opacity-50"></i> OOP & Design Patterns</span>
-                        <span class="px-5 py-3 bg-white hover:bg-gray-100 transition-colors text-black font-bold tracking-wide uppercase text-sm border border-gray-200 shadow-sm flex items-center gap-2"><i class="fas fa-database opacity-50"></i> Relational DBMS Theory</span>
-                        <span class="px-5 py-3 bg-white hover:bg-gray-100 transition-colors text-black font-bold tracking-wide uppercase text-sm border border-gray-200 shadow-sm flex items-center gap-2"><i class="fas fa-robot opacity-50"></i> Machine Learning Foundations</span>
+                        <span
+                            class="px-5 py-3 bg-white hover:bg-gray-100 transition-colors text-black font-bold tracking-wide uppercase text-sm border border-gray-200 shadow-sm flex items-center gap-2"><i
+                                class="fas fa-project-diagram opacity-50"></i> Data Structures & Algorithms</span>
+                        <span
+                            class="px-5 py-3 bg-white hover:bg-gray-100 transition-colors text-black font-bold tracking-wide uppercase text-sm border border-gray-200 shadow-sm flex items-center gap-2"><i
+                                class="fas fa-microchip opacity-50"></i> Operating Systems Architecture</span>
+                        <span
+                            class="px-5 py-3 bg-white hover:bg-gray-100 transition-colors text-black font-bold tracking-wide uppercase text-sm border border-gray-200 shadow-sm flex items-center gap-2"><i
+                                class="fas fa-network-wired opacity-50"></i> Networking Protocols</span>
+                        <span
+                            class="px-5 py-3 bg-white hover:bg-gray-100 transition-colors text-black font-bold tracking-wide uppercase text-sm border border-gray-200 shadow-sm flex items-center gap-2"><i
+                                class="fas fa-sitemap opacity-50"></i> OOP & Design Patterns</span>
+                        <span
+                            class="px-5 py-3 bg-white hover:bg-gray-100 transition-colors text-black font-bold tracking-wide uppercase text-sm border border-gray-200 shadow-sm flex items-center gap-2"><i
+                                class="fas fa-database opacity-50"></i> Relational DBMS Theory</span>
+                        <span
+                            class="px-5 py-3 bg-white hover:bg-gray-100 transition-colors text-black font-bold tracking-wide uppercase text-sm border border-gray-200 shadow-sm flex items-center gap-2"><i
+                                class="fas fa-robot opacity-50"></i> Machine Learning Foundations</span>
                     </div>
                 </div>
             </div>
@@ -328,49 +493,73 @@
         <section id="projects" class="pt-24">
             <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 reveal">
                 <div>
-                    <h2 class="text-5xl md:text-7xl font-black tracking-tight mb-6 text-black">Featured <span class="text-gray-400">Deployments</span>.</h2>
-                    <p class="text-gray-600 text-xl max-w-2xl">Comprehensive case studies reflecting applied logic, rigorous data processing, and highly measurable end-user impacts.</p>
+                    <h2 class="text-5xl md:text-7xl font-black tracking-tight mb-6 text-black">Featured <span
+                            class="text-gray-400">Deployments</span>.</h2>
+                    <p class="text-gray-600 text-xl max-w-2xl">Comprehensive case studies reflecting applied logic,
+                        rigorous data processing, and highly measurable end-user impacts.</p>
                 </div>
-                <a href="https://github.com/Abhi12305323" target="_blank" class="hidden md:inline-flex px-8 py-4 rounded-full border-2 border-black bg-white hover:bg-black items-center justify-center gap-3 text-black hover:text-white transition-all font-bold shadow-sm">
+                <a href="https://github.com/Abhi12305323" target="_blank"
+                    class="hidden md:inline-flex px-8 py-4 rounded-full border-2 border-black bg-white hover:bg-black items-center justify-center gap-3 text-black hover:text-white transition-all font-bold shadow-sm">
                     <i class="fab fa-github text-xl"></i> View Complete GitHub
                 </a>
             </div>
 
             <div class="grid md:grid-cols-2 gap-10">
-                
+
                 <!-- Project: Adidas -->
                 <div class="glass-panel flex flex-col reveal group overflow-hidden p-0">
                     <div class="p-10 pb-0 flex items-center justify-between border-b border-gray-100 pb-6 mb-6">
-                        <div class="w-16 h-16 rounded-2xl bg-black text-white border border-gray-200 flex items-center justify-center text-3xl shadow-sm group-hover:scale-110 transition-transform">
+                        <div
+                            class="w-16 h-16 rounded-2xl bg-black text-white border border-gray-200 flex items-center justify-center text-3xl shadow-sm group-hover:scale-110 transition-transform">
                             <i class="fas fa-chart-line"></i>
                         </div>
-                        <span class="font-mono text-sm font-bold text-black tracking-widest bg-gray-100 px-4 py-1.5 rounded-full border border-gray-200 uppercase">Spring 2025</span>
+                        <span
+                            class="font-mono text-sm font-bold text-black tracking-widest bg-gray-100 px-4 py-1.5 rounded-full border border-gray-200 uppercase">Spring
+                            2025</span>
                     </div>
-                    
+
                     <div class="p-10 pt-0 flex-grow flex flex-col justify-between">
                         <div>
                             <h3 class="text-3xl font-black text-black mb-6">Adidas US Market Sales Analytics</h3>
-                            
+
                             <div class="space-y-4 mb-8">
                                 <p class="text-gray-600 leading-relaxed font-light text-lg">
-                                    <strong class="text-black font-bold">The Challenge:</strong> Adidas required an exhaustive breakdown of massive, unstructured US sales data to comprehend regional product strengths, unearthing which items effectively triggered revenue thresholds.
+                                    <strong class="text-black font-bold">The Challenge:</strong> Adidas required an
+                                    exhaustive breakdown of massive, unstructured US sales data to comprehend regional
+                                    product strengths, unearthing which items effectively triggered revenue thresholds.
                                 </p>
                                 <p class="text-gray-600 leading-relaxed font-light text-lg">
-                                    <strong class="text-black font-bold">The Solution & Execution:</strong> Leveraging the immense computational power of the Pandas library, I authored Python scripts to sanitize and structure the raw data pipeline. I subsequently executed an intensely detailed Exploratory Data Analysis (EDA), mapping millions of data points into pristine Seaborn and Matplotlib bar charts to visually isolate product-wise distribution and sales density mapping.
+                                    <strong class="text-black font-bold">The Solution & Execution:</strong> Leveraging
+                                    the immense computational power of the Pandas library, I authored Python scripts to
+                                    sanitize and structure the raw data pipeline. I subsequently executed an intensely
+                                    detailed Exploratory Data Analysis (EDA), mapping millions of data points into
+                                    pristine Seaborn and Matplotlib bar charts to visually isolate product-wise
+                                    distribution and sales density mapping.
                                 </p>
                                 <p class="text-gray-600 leading-relaxed font-light text-lg">
-                                    <strong class="text-black font-bold">The Impact:</strong> This visual intelligence infrastructure successfully isolated the company's paramount performing variables, feeding stakeholders the critical mathematical insights needed to realize and command a staggering <strong class="text-black font-black">80% strategic sales growth rate projection</strong>.
+                                    <strong class="text-black font-bold">The Impact:</strong> This visual intelligence
+                                    infrastructure successfully isolated the company's paramount performing variables,
+                                    feeding stakeholders the critical mathematical insights needed to realize and
+                                    command a staggering <strong class="text-black font-black">70% strategic sales
+                                        growth rate projection</strong>.
                                 </p>
                             </div>
                         </div>
-                        
+
                         <div class="space-y-8 mt-auto">
                             <div class="flex flex-wrap gap-3">
-                                <span class="text-sm font-bold text-gray-800 px-4 py-2 bg-gray-100 rounded-lg border border-gray-200 shadow-sm"><i class="fas fa-check text-black mr-2"></i>Pandas (EDA)</span>
-                                <span class="text-sm font-bold text-gray-800 px-4 py-2 bg-gray-100 rounded-lg border border-gray-200 shadow-sm"><i class="fas fa-check text-black mr-2"></i>Seaborn</span>
-                                <span class="text-sm font-bold text-gray-800 px-4 py-2 bg-gray-100 rounded-lg border border-gray-200 shadow-sm"><i class="fas fa-check text-black mr-2"></i>Matplotlib</span>
+                                <span
+                                    class="text-sm font-bold text-gray-800 px-4 py-2 bg-gray-100 rounded-lg border border-gray-200 shadow-sm"><i
+                                        class="fas fa-check text-black mr-2"></i>Pandas (EDA)</span>
+                                <span
+                                    class="text-sm font-bold text-gray-800 px-4 py-2 bg-gray-100 rounded-lg border border-gray-200 shadow-sm"><i
+                                        class="fas fa-check text-black mr-2"></i>Seaborn</span>
+                                <span
+                                    class="text-sm font-bold text-gray-800 px-4 py-2 bg-gray-100 rounded-lg border border-gray-200 shadow-sm"><i
+                                        class="fas fa-check text-black mr-2"></i>Matplotlib</span>
                             </div>
-                            <a href="https://github.com/Abhi12305323/python-project" target="_blank" class="inline-flex w-full justify-center items-center gap-3 bg-black text-white px-6 py-4 rounded-2xl font-bold text-lg hover:bg-gray-800 hover:shadow-xl hover:-translate-y-1 transition-all">
+                            <a href="https://github.com/Abhi12305323/python-project" target="_blank"
+                                class="inline-flex w-full justify-center items-center gap-3 bg-black text-white px-6 py-4 rounded-2xl font-bold text-lg hover:bg-gray-800 hover:shadow-xl hover:-translate-y-1 transition-all">
                                 <i class="fab fa-github text-xl"></i> Inspect Code Repository
                             </a>
                         </div>
@@ -378,38 +567,62 @@
                 </div>
 
                 <!-- Project: Brick Breaker -->
-                <div class="glass-panel flex flex-col reveal group overflow-hidden p-0" style="transition-delay: 100ms;">
+                <div class="glass-panel flex flex-col reveal group overflow-hidden p-0"
+                    style="transition-delay: 100ms;">
                     <div class="p-10 pb-0 flex items-center justify-between border-b border-gray-100 pb-6 mb-6">
-                        <div class="w-16 h-16 rounded-2xl bg-black text-white border border-gray-200 flex items-center justify-center text-3xl shadow-sm group-hover:scale-110 transition-transform">
+                        <div
+                            class="w-16 h-16 rounded-2xl bg-black text-white border border-gray-200 flex items-center justify-center text-3xl shadow-sm group-hover:scale-110 transition-transform">
                             <i class="fas fa-gamepad"></i>
                         </div>
-                        <span class="font-mono text-sm font-bold text-black tracking-widest bg-gray-100 px-4 py-1.5 rounded-full border border-gray-200 uppercase">Early 2025</span>
+                        <span
+                            class="font-mono text-sm font-bold text-black tracking-widest bg-gray-100 px-4 py-1.5 rounded-full border border-gray-200 uppercase">Early
+                            2025</span>
                     </div>
-                    
+
                     <div class="p-10 pt-0 flex-grow flex flex-col justify-between">
                         <div>
                             <h3 class="text-3xl font-black text-black mb-6">Pygame Physics Engine: Brick Breaker</h3>
-                            
+
                             <div class="space-y-4 mb-8">
                                 <p class="text-gray-600 leading-relaxed font-light text-lg">
-                                    <strong class="text-black font-bold">The Challenge:</strong> Building a highly responsive 2D application requires an intricate understanding of the main hardware game-loop, managing real-time rendering, event handling, and calculating rapid vector-based 2D physics.
+                                    <strong class="text-black font-bold">The Challenge:</strong> Building a highly
+                                    responsive 2D application requires an intricate understanding of the main hardware
+                                    game-loop, managing real-time rendering, event handling, and calculating rapid
+                                    vector-based 2D physics.
                                 </p>
                                 <p class="text-gray-600 leading-relaxed font-light text-lg">
-                                    <strong class="text-black font-bold">The Solution & Execution:</strong> Constructed entirely in Python using the Pygame library, I engineered an Object-Oriented game boasting flawless paddle synchronization, strict boundary enforcement, and complex ball-to-brick algorithmic collision detection. Beyond raw physics, I incorporated immersive UX features including dynamic multi-tiered difficulty scaling (Easy, Medium, Hard adjusting paddle/ball vectors dynamically), fluid level progression matrices, and gradient aesthetic designs.
+                                    <strong class="text-black font-bold">The Solution & Execution:</strong> Constructed
+                                    entirely in Python using the Pygame library, I engineered an Object-Oriented game
+                                    boasting flawless paddle synchronization, strict boundary enforcement, and complex
+                                    ball-to-brick algorithmic collision detection. Beyond raw physics, I incorporated
+                                    immersive UX features including dynamic multi-tiered difficulty scaling (Easy,
+                                    Medium, Hard adjusting paddle/ball vectors dynamically), fluid level progression
+                                    matrices, and gradient aesthetic designs.
                                 </p>
                                 <p class="text-gray-600 leading-relaxed font-light text-lg">
-                                    <strong class="text-black font-bold">The Impact:</strong> This architecture provided an immensely smooth gameplay envelope devoid of physics clipping. Through carefully tuned dynamic difficulty adjustments, the product secured continuous user engagement, validating a spectacular <strong class="text-black font-black">75% active-session success and completion rate</strong>.
+                                    <strong class="text-black font-bold">The Impact:</strong> This architecture provided
+                                    an immensely smooth gameplay envelope devoid of physics clipping. Through carefully
+                                    tuned dynamic difficulty adjustments, the product secured continuous user
+                                    engagement, validating a spectacular <strong class="text-black font-black">80%
+                                        active-session success and completion rate</strong>.
                                 </p>
                             </div>
                         </div>
-                        
+
                         <div class="space-y-8 mt-auto">
                             <div class="flex flex-wrap gap-3">
-                                <span class="text-sm font-bold text-gray-800 px-4 py-2 bg-gray-100 rounded-lg border border-gray-200 shadow-sm"><i class="fas fa-check text-black mr-2"></i>Python (OOP)</span>
-                                <span class="text-sm font-bold text-gray-800 px-4 py-2 bg-gray-100 rounded-lg border border-gray-200 shadow-sm"><i class="fas fa-check text-black mr-2"></i>Pygame Server</span>
-                                <span class="text-sm font-bold text-gray-800 px-4 py-2 bg-gray-100 rounded-lg border border-gray-200 shadow-sm"><i class="fas fa-check text-black mr-2"></i>Vector Physics</span>
+                                <span
+                                    class="text-sm font-bold text-gray-800 px-4 py-2 bg-gray-100 rounded-lg border border-gray-200 shadow-sm"><i
+                                        class="fas fa-check text-black mr-2"></i>Python (OOP)</span>
+                                <span
+                                    class="text-sm font-bold text-gray-800 px-4 py-2 bg-gray-100 rounded-lg border border-gray-200 shadow-sm"><i
+                                        class="fas fa-check text-black mr-2"></i>Pygame Server</span>
+                                <span
+                                    class="text-sm font-bold text-gray-800 px-4 py-2 bg-gray-100 rounded-lg border border-gray-200 shadow-sm"><i
+                                        class="fas fa-check text-black mr-2"></i>Vector Physics</span>
                             </div>
-                            <a href="https://github.com/Abhi12305323/brick-baker" target="_blank" class="inline-flex w-full justify-center items-center gap-3 bg-black text-white px-6 py-4 rounded-2xl font-bold text-lg hover:bg-gray-800 hover:shadow-xl hover:-translate-y-1 transition-all">
+                            <a href="https://github.com/Abhi12305323/brick-baker" target="_blank"
+                                class="inline-flex w-full justify-center items-center gap-3 bg-black text-white px-6 py-4 rounded-2xl font-bold text-lg hover:bg-gray-800 hover:shadow-xl hover:-translate-y-1 transition-all">
                                 <i class="fab fa-github text-xl"></i> Inspect Code Repository
                             </a>
                         </div>
@@ -419,54 +632,139 @@
             </div>
         </section>
 
+        <!-- Achievements Section -->
+        <section id="achievements" class="pt-24 reveal">
+            <div class="text-center md:text-left mb-16">
+                <h2 class="text-5xl md:text-7xl font-black tracking-tight mb-6 text-black">Honors & <span
+                        class="text-gray-400">Impact</span>.</h2>
+                <p class="text-gray-600 text-xl max-w-2xl">Recognitions and contributions beyond the IDE, focusing on
+                    leadership and social responsibility.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- NGO Volunteer -->
+                <div class="glass-panel p-10 group hover:bg-gray-50 transition-all">
+                    <div
+                        class="w-16 h-16 rounded-2xl bg-black text-white flex items-center justify-center text-3xl mb-8 shadow-md group-hover:scale-110 transition-transform">
+                        <i class="fas fa-hands-helping"></i>
+                    </div>
+                    <span
+                        class="text-black font-bold text-xs uppercase tracking-widest bg-gray-100 px-3 py-1 rounded-md border border-gray-200 shadow-sm">May
+                        2024</span>
+                    <h3 class="text-2xl font-bold mt-4 mb-2 text-black">Leadership & Extra Curricular</h3>
+                    <p class="text-gray-600 font-light leading-relaxed">
+                        Worked as a dedicated volunteer in an <strong class="text-black font-bold">NGO (Old Age
+                            Home)</strong>, actively contributing towards social responsibility and community welfare.
+                    </p>
+                </div>
+
+                <!-- Hackathon Volunteer -->
+                <div class="glass-panel p-10 group hover:bg-gray-50 transition-all">
+                    <div
+                        class="w-16 h-16 rounded-2xl bg-black text-white flex items-center justify-center text-3xl mb-8 shadow-md group-hover:scale-110 transition-transform">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <span
+                        class="text-black font-bold text-xs uppercase tracking-widest bg-gray-100 px-3 py-1 rounded-md border border-gray-200 shadow-sm">Mar
+                        2023</span>
+                    <h3 class="text-2xl font-bold mt-4 mb-2 text-black">Event Management</h3>
+                    <p class="text-gray-600 font-light leading-relaxed">
+                        Served as a volunteer coordinator for a national-level <strong
+                            class="text-black font-bold">Hackathon</strong> conducted under the Coding Ninjas umbrella.
+                    </p>
+                </div>
+            </div>
+        </section>
+
         <!-- Timeline: Education & Certifications together -->
         <section id="education" class="pt-24">
             <div class="text-center mb-16 reveal">
-                <h2 class="text-5xl md:text-7xl font-black tracking-tight mb-6 text-black">Career <span class="text-gray-400">Timeline</span>.</h2>
+                <h2 class="text-5xl md:text-7xl font-black tracking-tight mb-6 text-black">Career <span
+                        class="text-gray-400">Timeline</span>.</h2>
                 <div class="w-24 h-1.5 bg-black mx-auto rounded-full"></div>
             </div>
 
             <div class="grid lg:grid-cols-2 gap-12">
-                
+
                 <!-- Formal Education & Training -->
                 <div class="reveal glass-panel p-10">
-                    <h3 class="text-3xl font-black mb-10 text-black flex items-center gap-4 border-b border-gray-200 pb-6"><i class="fas fa-university text-gray-400"></i> Academics & Intense Bootcamps</h3>
-                    
+                    <h3
+                        class="text-3xl font-black mb-10 text-black flex items-center gap-4 border-b border-gray-200 pb-6">
+                        <i class="fas fa-university text-gray-400"></i> Academics & Intense Bootcamps
+                    </h3>
+
                     <div class="space-y-10 pl-6 border-l-4 border-black relative">
-                        
+
                         <!-- Training -->
                         <div class="relative group">
-                            <div class="absolute w-6 h-6 rounded-full bg-black border-4 border-white -left-[35px] top-1 shadow-sm group-hover:scale-125 transition-transform"></div>
-                            <span class="text-black font-bold text-sm uppercase tracking-widest bg-gray-100 px-3 py-1 rounded-md border border-gray-200 shadow-sm">Jun 2024 - Jul 2024</span>
-                            <h4 class="text-2xl font-bold mt-4 text-black">Advanced Foundations of DSA Boot-camp</h4>
-                            <p class="text-base text-gray-600 font-bold tracking-wide mt-1 italic">Center for Professional Enhancements (Lovely Professional University)</p>
-                            <p class="text-base text-gray-600 mt-4 leading-relaxed font-light bg-gray-50 p-4 rounded-xl border border-gray-200">An extraordinarily rigorous academic project incubator. Gained extensive, hands-on architectural experience using Java. Engineered deep algorithms targeting sophisticated linked lists, recursive tree traversal, and complex graph manipulations. Sharpened analytical competitive programming capabilities to peak efficiency.</p>
+                            <div
+                                class="absolute w-6 h-6 rounded-full bg-black border-4 border-white -left-[35px] top-1 shadow-sm group-hover:scale-125 transition-transform">
+                            </div>
+                            <span
+                                class="text-black font-bold text-sm uppercase tracking-widest bg-gray-100 px-3 py-1 rounded-md border border-gray-200 shadow-sm">Jun’25
+                                – Jul’25</span>
+                            <h4 class="text-2xl font-bold mt-4 text-black">Fundamentals of Data Structures</h4>
+                            <p class="text-base text-gray-600 font-bold tracking-wide mt-1 italic">Center for
+                                Professional Enhancements (Lovely Professional University)</p>
+                            <div
+                                class="text-base text-gray-600 mt-4 leading-relaxed font-light bg-gray-50 p-6 rounded-xl border border-gray-200 space-y-3">
+                                <p class="flex gap-3"><i class="fas fa-check-circle text-black mt-1"></i> Acquired a
+                                    solid understanding of Java fundamentals and Object-Oriented Programming (OOP)
+                                    concepts.</p>
+                                <p class="flex gap-3"><i class="fas fa-check-circle text-black mt-1"></i> Implemented
+                                    key data structures including Arrays, Linked Lists, Stacks, Queues, Trees, and
+                                    Graphs.</p>
+                                <p class="flex gap-3"><i class="fas fa-check-circle text-black mt-1"></i> Applied
+                                    algorithms such as Sorting, Searching, and Traversals to solve real-world
+                                    programming problems.</p>
+                                <p class="flex gap-3"><i class="fas fa-check-circle text-black mt-1"></i> Strengthened
+                                    logical reasoning, coding efficiency, and analytical thinking through rigorous
+                                    exercises.</p>
+                                <p class="flex gap-3"><i class="fas fa-check-circle text-black mt-1"></i> Completed
+                                    multiple hands-on projects demonstrating practical application of data structure
+                                    concepts.</p>
+                            </div>
                         </div>
-                        
+
                         <!-- LPU -->
                         <div class="relative group">
-                            <div class="absolute w-5 h-5 rounded-full bg-white border-4 border-gray-300 -left-[32px] top-1 shadow-sm group-hover:scale-125 transition-transform"></div>
+                            <div
+                                class="absolute w-5 h-5 rounded-full bg-white border-4 border-gray-300 -left-[32px] top-1 shadow-sm group-hover:scale-125 transition-transform">
+                            </div>
                             <span class="text-gray-500 font-bold text-xs uppercase tracking-widest">2023 - 2027</span>
                             <h4 class="text-xl font-bold mt-2 text-black">B.Tech Computer Science and Engineering</h4>
-                            <p class="text-base text-gray-800 font-bold mt-1">Lovely Professional University, Jalandhar, Punjab</p>
-                            <p class="text-sm text-gray-500 mt-2 font-light">Comprehensive university curriculum establishing the mathematical and logical bedrock for modern application engineering.</p>
+                            <p class="text-base text-gray-800 font-bold mt-1">Lovely Professional University, Jalandhar,
+                                Punjab</p>
+                            <p class="text-sm text-gray-500 mt-2 font-light">Comprehensive university curriculum
+                                establishing the mathematical and logical bedrock for modern application engineering.
+                            </p>
                         </div>
-                        
+
                         <!-- Aditya -->
                         <div class="relative group">
-                            <div class="absolute w-5 h-5 rounded-full bg-white border-4 border-gray-300 -left-[32px] top-1 shadow-sm group-hover:scale-125 transition-transform"></div>
-                            <span class="text-gray-500 font-bold text-xs uppercase tracking-widest">2022 - 2023</span>
-                            <h4 class="text-xl font-bold mt-2 text-black">Higher Secondary (12th Science Stream)</h4>
-                            <p class="text-base text-gray-800 font-bold mt-1">Aditya School, Kakinada • Graduated 67%</p>
-                            <p class="text-sm text-gray-500 mt-2 font-light">Acquired foundational logic and analytical precision through core science subject requirements.</p>
+                            <div
+                                class="absolute w-5 h-5 rounded-full bg-white border-4 border-gray-300 -left-[32px] top-1 shadow-sm group-hover:scale-125 transition-transform">
+                            </div>
+                            <span class="text-gray-500 font-bold text-xs uppercase tracking-widest">Jun’22 –
+                                Mar’23</span>
+                            <h4 class="text-xl font-bold mt-2 text-black">Higher Secondary (Intermediate)</h4>
+                            <p class="text-base text-gray-800 font-bold mt-1">Aditya Junior College, Kakinada •
+                                Percentage: 67%
+                            </p>
+                            <p class="text-sm text-gray-500 mt-2 font-light">Acquired foundational logic and analytical
+                                precision through core science subject requirements.</p>
                         </div>
 
                         <!-- 10th -->
                         <div class="relative group">
-                            <div class="absolute w-5 h-5 rounded-full bg-white border-4 border-gray-300 -left-[32px] top-1 shadow-sm group-hover:scale-125 transition-transform"></div>
-                            <span class="text-gray-500 font-bold text-xs uppercase tracking-widest">2020 - 2021</span>
+                            <div
+                                class="absolute w-5 h-5 rounded-full bg-white border-4 border-gray-300 -left-[32px] top-1 shadow-sm group-hover:scale-125 transition-transform">
+                            </div>
+                            <span class="text-gray-500 font-bold text-xs uppercase tracking-widest">Jun’20 –
+                                Mar’21</span>
                             <h4 class="text-lg font-bold mt-2 text-black">Matriculation (10th Secondary)</h4>
-                            <p class="text-base text-gray-800 font-bold mt-1">Sri Chaitanya International School, Kakinada • Outstanding Grade: 84%</p>
+                            <p class="text-base text-gray-800 font-bold mt-1">Boon School, Kakinada • Outstanding Grade:
+                                84%</p>
                         </div>
 
                     </div>
@@ -474,53 +772,240 @@
 
                 <!-- Certifications List -->
                 <div class="reveal glass-panel p-10" style="transition-delay: 150ms;">
-                    <h3 class="text-3xl font-black mb-10 text-black flex items-center gap-4 border-b border-gray-200 pb-6">
+                    <h3
+                        class="text-3xl font-black mb-10 text-black flex items-center gap-4 border-b border-gray-200 pb-6">
                         <i class="fas fa-certificate text-black"></i> Professional Certifications
                     </h3>
-                    
+
                     <ul class="space-y-5">
-                        <li class="p-5 border border-gray-200 bg-white hover:bg-gray-50 rounded-xl transition-colors flex flex-col sm:flex-row justify-between sm:items-center shadow-sm">
-                            <div>
-                                <h4 class="font-bold text-lg text-black">Fundamentals of Data Structures</h4>
-                                <p class="text-sm text-gray-500 mt-1 font-bold uppercase tracking-wide flex items-center gap-2"><i class="fas fa-building text-gray-400"></i> Center for Professional Enhancement (LPU)</p>
+                        <li
+                            class="p-5 border border-gray-200 bg-white hover:bg-gray-50 rounded-xl transition-colors flex flex-col sm:flex-row justify-between sm:items-center shadow-sm">
+                            <div class="flex items-center gap-5">
+                                <a href="./Fundamentals_of_Data_Structures.png"
+                                    download="Fundamentals_of_Data_Structures.png"
+                                    class="block group-hover:scale-105 transition-transform duration-300">
+                                    <img src="./Fundamentals_of_Data_Structures.png"
+                                        alt="Fundamentals of Data Structures"
+                                        class="w-16 h-16 rounded-lg object-cover shadow-sm border border-gray-100">
+                                </a>
+                                <div>
+                                    <h4 class="font-bold text-lg text-black">Fundamentals of Data Structures</h4>
+                                    <p
+                                        class="text-sm text-gray-500 mt-1 font-bold uppercase tracking-wide flex items-center gap-2">
+                                        <i class="fas fa-building text-gray-400"></i> Center for Professional
+                                        Enhancement
+                                        (LPU)
+                                    </p>
+                                </div>
                             </div>
-                            <span class="mt-4 sm:mt-0 px-4 py-2 bg-gray-100 text-black text-xs font-bold rounded-lg border border-gray-200">Jun 2025</span>
+                            <div class="mt-4 sm:mt-0 flex items-center gap-3">
+                                <span
+                                    class="px-4 py-2 bg-gray-100 text-black text-xs font-bold rounded-lg border border-gray-200">Jun
+                                    2025</span>
+                                <a href="./Fundamentals_of_Data_Structures.png"
+                                    download="Fundamentals_of_Data_Structures.png"
+                                    class="px-4 py-2 bg-black text-white text-xs font-bold rounded-lg hover:bg-gray-800 transition-colors flex items-center gap-2 shadow-sm border border-transparent">
+                                    <i class="fas fa-download"></i> View & Download
+                                </a>
+                            </div>
                         </li>
 
-                        <li class="p-5 border border-gray-200 bg-white hover:bg-gray-50 rounded-xl transition-colors flex flex-col sm:flex-row justify-between sm:items-center shadow-sm">
-                            <div>
-                                <h4 class="font-bold text-lg text-black">Mastering C Language Foundations</h4>
-                                <p class="text-sm text-gray-500 mt-1 font-bold uppercase tracking-wide flex items-center gap-2"><i class="fas fa-building text-gray-400"></i> Neo Colab</p>
+                        <li
+                            class="p-5 border border-gray-200 bg-white hover:bg-gray-50 rounded-xl transition-colors flex flex-col sm:flex-row justify-between sm:items-center shadow-sm">
+                            <div class="flex items-center gap-5">
+                                <a href="./Mastering_C_Language_Foundations.png"
+                                    download="Mastering_C_Language_Foundations.png"
+                                    class="block group-hover:scale-105 transition-transform duration-300">
+                                    <img src="./Mastering_C_Language_Foundations.png"
+                                        alt="Mastering C Language Foundations"
+                                        class="w-16 h-16 rounded-lg object-cover shadow-sm border border-gray-100">
+                                </a>
+                                <div>
+                                    <h4 class="font-bold text-lg text-black">Mastering C Language Foundations</h4>
+                                    <p
+                                        class="text-sm text-gray-500 mt-1 font-bold uppercase tracking-wide flex items-center gap-2">
+                                        <i class="fas fa-building text-gray-400"></i> Neo Colab
+                                    </p>
+                                </div>
                             </div>
-                            <span class="mt-4 sm:mt-0 px-4 py-2 bg-gray-100 text-black text-xs font-bold rounded-lg border border-gray-200">May 2024</span>
+                            <div class="mt-4 sm:mt-0 flex items-center gap-3">
+                                <span
+                                    class="px-4 py-2 bg-gray-100 text-black text-xs font-bold rounded-lg border border-gray-200">May
+                                    2024</span>
+                                <a href="./Mastering_C_Language_Foundations.png"
+                                    download="Mastering_C_Language_Foundations.png"
+                                    class="px-4 py-2 bg-black text-white text-xs font-bold rounded-lg hover:bg-gray-800 transition-colors flex items-center gap-2 shadow-sm border border-transparent">
+                                    <i class="fas fa-download"></i> View & Download
+                                </a>
+                            </div>
                         </li>
 
-                        <li class="p-5 border border-gray-200 bg-white hover:bg-gray-50 rounded-xl transition-colors flex flex-col sm:flex-row justify-between sm:items-center shadow-sm">
-                            <div>
-                                <h4 class="font-bold text-lg text-black">Python 101 for Advanced Data Science</h4>
-                                <p class="text-sm text-gray-500 mt-1 font-bold uppercase tracking-wide flex items-center gap-2"><i class="fas fa-building text-gray-400"></i> IBM - Cognitive Class Enterprise</p>
-                            </div>
-                            <span class="mt-4 sm:mt-0 px-4 py-2 bg-gray-100 text-black text-xs font-bold rounded-lg border border-gray-200">Apr 2024</span>
-                        </li>
 
-                        <li class="p-5 border border-gray-200 bg-white hover:bg-gray-50 rounded-xl transition-colors flex flex-col sm:flex-row justify-between sm:items-center shadow-sm">
-                            <div>
-                                <h4 class="font-bold text-lg text-black">Python Programming Architecture</h4>
-                                <p class="text-sm text-gray-500 mt-1 font-bold uppercase tracking-wide flex items-center gap-2"><i class="fas fa-building text-gray-400"></i> iHUB DivyaSampark, IIT Roorkee</p>
+                        <li
+                            class="p-5 border border-gray-200 bg-white hover:bg-gray-50 rounded-xl transition-colors flex flex-col sm:flex-row justify-between sm:items-center shadow-sm">
+                            <div class="flex items-center gap-5">
+                                <a href="./Responsive_Web_Design_Certificate.png"
+                                    download="Responsive_Web_Design_Certificate.png"
+                                    class="block group-hover:scale-105 transition-transform duration-300">
+                                    <img src="./Responsive_Web_Design_Certificate.png"
+                                        alt="Responsive Web Design Implementation"
+                                        class="w-16 h-16 rounded-lg object-cover shadow-sm border border-gray-100">
+                                </a>
+                                <div>
+                                    <h4 class="font-bold text-lg text-black">Responsive Web Design Implementation</h4>
+                                    <p
+                                        class="text-sm text-gray-500 mt-1 font-bold uppercase tracking-wide flex items-center gap-2">
+                                        <i class="fas fa-building text-gray-400"></i> freeCodeCamp Core Certification
+                                    </p>
+                                </div>
                             </div>
-                            <span class="mt-4 sm:mt-0 px-4 py-2 bg-gray-100 text-black text-xs font-bold rounded-lg border border-gray-200">Mar 2024</span>
+                            <div class="mt-4 sm:mt-0 flex items-center gap-3">
+                                <span
+                                    class="px-4 py-2 bg-gray-100 text-black text-xs font-bold rounded-lg border border-gray-200">Oct
+                                    2023</span>
+                                <a href="./Responsive_Web_Design_Certificate.png"
+                                    download="Responsive_Web_Design_Certificate.png"
+                                    class="px-4 py-2 bg-black text-white text-xs font-bold rounded-lg hover:bg-gray-800 transition-colors flex items-center gap-2 shadow-sm border border-transparent">
+                                    <i class="fas fa-download"></i> View & Download
+                                </a>
+                            </div>
                         </li>
-
-                        <li class="p-5 border border-gray-200 bg-white hover:bg-gray-50 rounded-xl transition-colors flex flex-col sm:flex-row justify-between sm:items-center shadow-sm">
-                            <div>
-                                <h4 class="font-bold text-lg text-black">Responsive Web Design Implementation</h4>
-                                <p class="text-sm text-gray-500 mt-1 font-bold uppercase tracking-wide flex items-center gap-2"><i class="fas fa-building text-gray-400"></i> freeCodeCamp Core Certification</p>
+                        <li
+                            class="p-5 border border-gray-200 bg-white hover:bg-gray-50 rounded-xl transition-colors flex flex-col sm:flex-row justify-between sm:items-center shadow-sm">
+                            <div class="flex items-center gap-5">
+                                <a href="./hardware.png" download="hardware.png"
+                                    class="block group-hover:scale-105 transition-transform duration-300">
+                                    <img src="./hardware.png" alt="Responsive Web Design Implementation"
+                                        class="w-16 h-16 rounded-lg object-cover shadow-sm border border-gray-100">
+                                </a>
+                                <div>
+                                    <h4 class="font-bold text-lg text-black">Introduction to Hardware and Operating
+                                        Systems</h4>
+                                    <p
+                                        class="text-sm text-gray-500 mt-1 font-bold uppercase tracking-wide flex items-center gap-2">
+                                        <i class="fas fa-building text-gray-400"></i> Coursera certificate
+                                    </p>
+                                </div>
                             </div>
-                            <span class="mt-4 sm:mt-0 px-4 py-2 bg-gray-100 text-black text-xs font-bold rounded-lg border border-gray-200">Oct 2023</span>
+                            <div class="mt-4 sm:mt-0 flex items-center gap-3">
+                                <span
+                                    class="px-4 py-2 bg-gray-100 text-black text-xs font-bold rounded-lg border border-gray-200">Sep
+                                    2024</span>
+                                <a href="./hardware.png" download="hardware.png"
+                                    class="px-4 py-2 bg-black text-white text-xs font-bold rounded-lg hover:bg-gray-800 transition-colors flex items-center gap-2 shadow-sm border border-transparent">
+                                    <i class="fas fa-download"></i> View & Download
+                                </a>
+                            </div>
+                        </li>
+                        <li
+                            class="p-5 border border-gray-200 bg-white hover:bg-gray-50 rounded-xl transition-colors flex flex-col sm:flex-row justify-between sm:items-center shadow-sm">
+                            <div class="flex items-center gap-5">
+                                <a href="./software.png" download="software.png"
+                                    class="block group-hover:scale-105 transition-transform duration-300">
+                                    <img src="./software.png" alt="Responsive Web Design Implementation"
+                                        class="w-16 h-16 rounded-lg object-cover shadow-sm border border-gray-100">
+                                </a>
+                                <div>
+                                    <h4 class="font-bold text-lg text-black">Coursera Learner</h4>
+                                    <p
+                                        class="text-sm text-gray-500 mt-1 font-bold uppercase tracking-wide flex items-center gap-2">
+                                        <i class="fas fa-building text-gray-400"></i> Coursera certificate
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="mt-4 sm:mt-0 flex items-center gap-3">
+                                <span
+                                    class="px-4 py-2 bg-gray-100 text-black text-xs font-bold rounded-lg border border-gray-200">May
+                                    2024</span>
+                                <a href="./software.png" download="software.png"
+                                    class="px-4 py-2 bg-black text-white text-xs font-bold rounded-lg hover:bg-gray-800 transition-colors flex items-center gap-2 shadow-sm border border-transparent">
+                                    <i class="fas fa-download"></i> View & Download
+                                </a>
+                            </div>
+                        </li>
+                        <li
+                            class="p-5 border border-gray-200 bg-white hover:bg-gray-50 rounded-xl transition-colors flex flex-col sm:flex-row justify-between sm:items-center shadow-sm">
+                            <div class="flex items-center gap-5">
+                                <a href="./python.png" download="python.png"
+                                    class="block group-hover:scale-105 transition-transform duration-300">
+                                    <img src="./python.png" alt="Responsive Web Design Implementation"
+                                        class="w-16 h-16 rounded-lg object-cover shadow-sm border border-gray-100">
+                                </a>
+                                <div>
+                                    <h4 class="font-bold text-lg text-black">Introduction to Python</h4>
+                                    <p
+                                        class="text-sm text-gray-500 mt-1 font-bold uppercase tracking-wide flex items-center gap-2">
+                                        <i class="fas fa-building text-gray-400"></i> Infosys certificate
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="mt-4 sm:mt-0 flex items-center gap-3">
+                                <span
+                                    class="px-4 py-2 bg-gray-100 text-black text-xs font-bold rounded-lg border border-gray-200">Mar
+                                    2024</span>
+                                <a href="./python.png" download="python.png"
+                                    class="px-4 py-2 bg-black text-white text-xs font-bold rounded-lg hover:bg-gray-800 transition-colors flex items-center gap-2 shadow-sm border border-transparent">
+                                    <i class="fas fa-download"></i> View & Download
+                                </a>
+                            </div>
                         </li>
                     </ul>
+
                 </div>
 
+            </div>
+        </section>
+        <!-- Inline Resume Viewer -->
+        <section id="resume" class="pt-24 reveal">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-16">
+                <div>
+                    <h2 class="text-5xl md:text-7xl font-black tracking-tight mb-6 text-black">Curriculum <span
+                            class="text-gray-400">Vitae</span>.</h2>
+                    <p class="text-gray-600 text-xl max-w-2xl">A distilled overview of my technical capabilities,
+                        academic rigour, and professional journey.</p>
+                </div>
+                <a href="./resume.pdf" download="resume.pdf"
+                    class="hidden md:inline-flex px-8 py-4 rounded-full bg-black text-white hover:bg-gray-800 items-center justify-center gap-3 font-bold shadow-xl transition-all hover:-translate-y-1 mt-8 md:mt-0">
+                    <i class="fas fa-download text-xl"></i> Download Full PDF
+                </a>
+            </div>
+
+            <!-- PDF Container -->
+            <div
+                class="glass-panel p-2 md:p-6 w-full h-[80vh] min-h-[600px] mb-8 relative group overflow-hidden shadow-2xl flex flex-col">
+                <div class="absolute inset-0 flex items-center justify-center -z-10">
+                    <p class="text-gray-400 text-sm font-bold uppercase tracking-widest animate-pulse">
+                        <i class="fas fa-spinner fa-spin mr-2"></i> Initializing Document
+                    </p>
+                </div>
+
+                <object data="./resume.pdf" type="application/pdf"
+                    class="w-full h-full rounded-xl border border-gray-200 bg-white" title="Surya Manobhiram Resume">
+                    <!-- Fallback content if PDF rendering is not supported -->
+                    <div
+                        class="w-full h-full flex flex-col items-center justify-center bg-gray-50 rounded-xl py-20 px-6 text-center shadow-inner">
+                        <div
+                            class="w-24 h-24 bg-white shadow-md border border-gray-200 rounded-full flex items-center justify-center text-gray-300 mb-8">
+                            <i class="fas fa-file-pdf text-4xl"></i>
+                        </div>
+                        <h3 class="text-3xl font-bold text-black mb-4">Cannot render inline PDF.</h3>
+                        <p class="text-gray-600 mb-8 max-w-md text-lg font-light leading-relaxed">
+                            Your browser environment prevents the direct rendering of PDF documents. Proceed to download
+                            the resume safely.
+                        </p>
+                        <a href="./resume.pdf" download="resume.pdf"
+                            class="px-10 py-5 rounded-full bg-black text-white font-bold text-lg hover:-translate-y-1 hover:shadow-2xl transition-all inline-flex items-center gap-3">
+                            <i class="fas fa-download"></i> Direct Download
+                        </a>
+                    </div>
+                </object>
+            </div>
+
+            <div class="md:hidden flex justify-center mt-6">
+                <a href="./resume.pdf" download="resume.pdf"
+                    class="w-full px-8 py-4 rounded-full bg-black text-white items-center justify-center gap-3 font-bold shadow-xl transition-all flex">
+                    <i class="fas fa-download"></i> Download Full Resume
+                </a>
             </div>
         </section>
 
@@ -530,8 +1015,9 @@
     <footer id="contact" class="relative pt-32 pb-12 mt-20 border-t border-gray-200 reveal bg-gray-50">
 
         <div class="max-w-5xl mx-auto px-6 text-center z-10 relative">
-            
-            <div class="w-24 h-24 bg-black text-white rounded-full flex items-center justify-center text-4xl mx-auto mb-10 shadow-lg hover:scale-110 transition-transform">
+
+            <div
+                class="w-24 h-24 bg-black text-white rounded-full flex items-center justify-center text-4xl mx-auto mb-10 shadow-lg hover:scale-110 transition-transform">
                 <i class="fas fa-paper-plane"></i>
             </div>
 
@@ -539,28 +1025,37 @@
                 Ready to <span class="text-gray-400">Collaborate?</span>
             </h2>
             <p class="text-2xl text-gray-600 mb-16 max-w-3xl mx-auto font-light leading-relaxed">
-                Whether diagnosing gigantic datasets, engineering clean, maintainable applications, or executing powerful DSA integration logic—my IDE and inbox are always open.
+                Whether diagnosing gigantic datasets, engineering clean, maintainable applications, or executing
+                powerful DSA integration logic—my IDE and inbox are always open.
             </p>
-            
+
             <div class="flex flex-col sm:flex-row justify-center gap-6 mb-24 max-w-3xl mx-auto">
-                <a href="mailto:mmanobhiram8@gmail.com" class="flex-1 bg-black text-white font-black text-xl px-8 py-5 rounded-2xl hover:bg-gray-900 transition-all shadow-xl border border-black flex items-center justify-center gap-4 uppercase tracking-wide">
+                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=mmanobhiram8@gmail.com" target="_blank"
+                    class="flex-1 bg-black text-white font-black text-xl px-8 py-5 rounded-2xl hover:bg-gray-900 transition-all shadow-xl border border-black flex items-center justify-center gap-4 uppercase tracking-wide">
                     <i class="fas fa-envelope text-2xl"></i> Dispatch Email
                 </a>
-                <a href="tel:+919963621272" class="flex-1 bg-white text-black font-black text-xl px-8 py-5 rounded-2xl border-2 border-gray-200 hover:border-black transition-all shadow-sm flex items-center justify-center gap-4 uppercase tracking-wide">
+                <a href="tel:+919963621272"
+                    class="flex-1 bg-white text-black font-black text-xl px-8 py-5 rounded-2xl border-2 border-gray-200 hover:border-black transition-all shadow-sm flex items-center justify-center gap-4 uppercase tracking-wide">
                     <i class="fas fa-phone text-2xl"></i> +91 9963621272
                 </a>
             </div>
 
             <div class="flex flex-col md:flex-row justify-between items-center pt-10 border-t border-gray-200">
-                <p class="font-heading font-black text-3xl tracking-tighter mb-6 md:mb-0 text-black flex items-center gap-3">
+                <p
+                    class="font-heading font-black text-3xl tracking-tighter mb-6 md:mb-0 text-black flex items-center gap-3">
                     <i class="fas fa-bolt text-black"></i> Surya.M
                 </p>
-                <p class="text-sm text-gray-500 font-bold tracking-widest uppercase mb-6 md:mb-0 bg-white px-4 py-2 rounded-full border border-gray-200">
+                <p
+                    class="text-sm text-gray-500 font-bold tracking-widest uppercase mb-6 md:mb-0 bg-white px-4 py-2 rounded-full border border-gray-200">
                     &copy; 2026 Kedara Sri Surya Manobhiram Manchimchetti
                 </p>
                 <div class="flex gap-6 text-black text-2xl">
-                    <a href="https://github.com/Abhi12305323" class="w-12 h-12 rounded-full bg-white border border-gray-200 flex items-center justify-center hover:bg-black hover:text-white transition-all shadow-sm"><i class="fab fa-github"></i></a>
-                    <a href="https://linkedin.com/in/abhiram" class="w-12 h-12 rounded-full bg-white border border-gray-200 flex items-center justify-center hover:bg-black hover:text-white transition-all shadow-sm"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://github.com/Abhi12305323"
+                        class="w-12 h-12 rounded-full bg-white border border-gray-200 flex items-center justify-center hover:bg-black hover:text-white transition-all shadow-sm"><i
+                            class="fab fa-github"></i></a>
+                    <a href="https://linkedin.com/in/abhiram"
+                        class="w-12 h-12 rounded-full bg-white border border-gray-200 flex items-center justify-center hover:bg-black hover:text-white transition-all shadow-sm"><i
+                            class="fab fa-linkedin-in"></i></a>
                 </div>
             </div>
         </div>
@@ -585,7 +1080,7 @@
             // Navbar behavior
             const navbar = document.getElementById('navbar');
             const navContainer = navbar.querySelector('div');
-            
+
             window.addEventListener('scroll', () => {
                 if (window.scrollY > 50) {
                     navContainer.classList.add('shadow-md');
@@ -603,9 +1098,9 @@
             window.addEventListener('mousemove', (e) => {
                 const x = e.clientX / window.innerWidth;
                 const y = e.clientY / window.innerHeight;
-                
+
                 orbs.forEach((orb, index) => {
-                    const speed = (index + 1) * 20; 
+                    const speed = (index + 1) * 20;
                     const offsetX = (x - 0.5) * speed;
                     const offsetY = (y - 0.5) * speed;
                     orb.style.transform = `translate(${offsetX}px, ${offsetY}px)`;
@@ -613,5 +1108,16 @@
             });
         });
     </script>
+
+    <!-- Floating Mail Button -->
+    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=mmanobhiram8@gmail.com" target="_blank"
+        class="fixed bottom-10 right-10 w-16 h-16 rounded-full bg-black text-white flex items-center justify-center text-2xl shadow-2xl hover:scale-110 hover:-translate-y-2 transition-all z-50 group border border-white/20">
+        <i class="fas fa-envelope"></i>
+        <span
+            class="absolute right-full mr-4 px-4 py-2 bg-black text-white text-xs font-bold rounded-lg opacity-0 group-hover:opacity-100 transition-all whitespace-nowrap pointer-events-none shadow-xl">
+            Mail Me Directly
+        </span>
+    </a>
 </body>
+
 </html>

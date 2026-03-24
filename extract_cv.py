@@ -8,7 +8,7 @@ except ImportError:
     subprocess.check_call([sys.executable, "-m", "pip", "install", "pypdf", "-q"])
     import pypdf
 
-pdf_path = "C:/Users/mmano/Downloads/manobhiram_sp_main (1).pdf"
+pdf_path = "C:/Users/mmano/Downloads/Manobhiram_gen_CV_main_edited.pdf"
 try:
     if os.path.exists(pdf_path):
         reader = pypdf.PdfReader(pdf_path)
